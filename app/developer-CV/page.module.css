@@ -1,0 +1,21 @@
+.wrapper {
+    width: 100vw;
+}
+.wrapper aside {
+    width: 18rem;
+    height: 100vh;
+    background-color: var(--primary-black);
+    color: var(--secondary-button-txt);
+    padding: 5rem 7rem;
+}
+.devAvatarContainer {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 1rem;
+}
+.devAvatarContainer img {
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+}
