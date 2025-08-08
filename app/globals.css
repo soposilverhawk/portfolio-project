@@ -1,0 +1,15 @@
+:root {
+  --primary-green: #26C17E;
+  --primary-black: #222935;
+  
+  --secondary-txt-bg: #EEEEEE;
+  --secondary-button-txt: #667081;
+
+  --headline-1-fs: 45px;
+  --headline-2-fs: 25px;
+  --txt-fs: 16px;
+}
+
+body {
+  font-size: 10px;
+}
