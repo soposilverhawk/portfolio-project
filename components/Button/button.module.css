@@ -1,0 +1,9 @@
+.button {
+  padding: 2rem 3rem;
+  background-color: var(--primary-black);
+  color: var(--secondary-button-txt);
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  z-index: 9999;
+}
