@@ -1,21 +1,65 @@
 .wrapper {
-    width: 100vw;
+  width: 100vw;
 }
-.wrapper aside {
-    width: 18rem;
-    height: 100vh;
-    background-color: var(--primary-black);
-    color: var(--secondary-button-txt);
-    padding: 4rem;
+.asideExpanded,
+.asideCollapsed {
+  height: 100vh;
+  background-color: var(--primary-black);
+  color: var(--secondary-button-txt);
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.devAvatarContainer {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     gap: 1rem;
+.asideCollapsed {
+  width: 54px;
+  padding: 4rem 2rem;
 }
-.devAvatarContainer img {
-    border-radius: 50%;
-    width: 10rem;
-    height: 10rem;
+.asideExpanded {
+  width: 18rem;
+  padding: 4rem;
+}
+
+.menuExpandedDevAvatarContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.menuExpandedDevAvatarContainer img {
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  transition: all 0.3s ease;
+}
+.menuCollapsedDevAvatarContainer img {
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  transition: all 0.3s ease;
+}
+
+.asideToggle {
+  all: unset;
+  width: 3rem;
+  height: 3rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--primary-black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+  position: absolute;
+  right: -5rem;
+  top: 4rem;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1rem;
+  cursor: pointer;
+}
+.toggleLine {
+  width: 3rem;
+  height: 1rem;
+  background-color: var(--secondary-button-txt);
+  border-radius: 2px;
 }

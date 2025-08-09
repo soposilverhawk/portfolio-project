@@ -8,11 +8,13 @@
   flex-direction: column;
   margin-top: 5rem;
 }
-.infoItem {
+.menuExpandedInfoItem,
+.menuCollapsedInfoItem {
   position: relative;
   padding-bottom: 2rem;
+  cursor: pointer;
 }
-.infoItem::after {
+.menuExpandedInfoItem::after {
   content: "";
   position: absolute;
   width: 0%;
@@ -22,9 +24,9 @@
   background-color: var(--primary-green);
   transition: width 0.3s ease;
 }
-.infoItem:hover::after {
+.menuExpandedInfoItem:hover::after {
   width: 80%;
 }
-.infoItem:hover {
+.menuExpandedInfoItem:hover {
     cursor: pointer;
 }
