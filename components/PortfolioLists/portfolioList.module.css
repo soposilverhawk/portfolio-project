@@ -1,0 +1,30 @@
+.portfolioList,
+.portfolioList li {
+  display: flex;
+  gap: 2rem;
+}
+.portfolioList {
+  font-size: var(--txt-fs);
+  flex-direction: column;
+  margin-top: 5rem;
+}
+.infoItem {
+  position: relative;
+  padding-bottom: 2rem;
+}
+.infoItem::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--primary-green);
+  transition: width 0.3s ease;
+}
+.infoItem:hover::after {
+  width: 80%;
+}
+.infoItem:hover {
+    cursor: pointer;
+}
