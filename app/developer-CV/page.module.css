@@ -1,6 +1,11 @@
 .wrapper {
   width: 100vw;
 }
+.devInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .asideExpanded,
 .asideCollapsed {
   height: 100vh;
@@ -11,6 +16,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 .asideCollapsed {
   width: 54px;
@@ -62,4 +68,18 @@
   height: 1rem;
   background-color: var(--secondary-button-txt);
   border-radius: 2px;
+}
+.menuExpandedReturn,
+.menuCollapsedReturn {
+  width: 1rem;
+  height: 1rem;
+  transform: rotate(45deg);
+}
+.menuExpandedReturn {
+  border-left: 1px solid var(--secondary-button-txt);
+  border-bottom: 1px solid var(--secondary-button-txt);
+}
+.menuCollapsedReturn {
+  border-left: 1px solid var(--primary-black);
+  border-bottom: 1px solid var(--primary-black);
 }

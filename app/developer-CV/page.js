@@ -5,25 +5,56 @@ import { navItems } from "@/data/portfolioListsData";
 import devImg from "../../public/homepage/developer-img.png";
 import Image from "next/image";
 import PortfolioList from "@/components/PortfolioLists/PortfolioList";
+import GoBackButton from "../../components/Button/Button";
+import { useRouter } from "next/navigation";
 
 function page() {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const router = useRouter();
   const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev)
-  }
+    setIsMenuOpen((prev) => !prev);
+  };
   return (
     <div className={styles.wrapper}>
-      <aside className={isMenuOpen ? styles.asideExpanded : styles.asideCollapsed}>
-        <div className={isMenuOpen ? styles.menuExpandedDevAvatarContainer : styles.menuCollapsedDevAvatarContainer}>
-          <Image src={devImg} alt="placeholder alt" />
-          {isMenuOpen && <p>John Doe</p>}
+      <aside
+        className={isMenuOpen ? styles.asideExpanded : styles.asideCollapsed}
+      >
+        <div className={styles.devInfoWrapper}>
+          <div
+            className={
+              isMenuOpen
+                ? styles.menuExpandedDevAvatarContainer
+                : styles.menuCollapsedDevAvatarContainer
+            }
+          >
+            <Image src={devImg} alt="placeholder alt" />
+            {isMenuOpen && <p>John Doe</p>}
+          </div>
+          <PortfolioList
+            data={navItems}
+            variant="devInfo"
+            isMenuOpen={isMenuOpen}
+          />
         </div>
-        <PortfolioList data={navItems} variant="devInfo" isMenuOpen={isMenuOpen}/>
         <button className={styles.asideToggle} onClick={toggleMenu}>
           <div className={styles.toggleLine}></div>
           <div className={styles.toggleLine}></div>
           <div className={styles.toggleLine}></div>
         </button>
+        <GoBackButton
+          variant="goBack"
+          isMenuOpen={isMenuOpen}
+          onclick={() => router.push("/")}
+        >
+          <div
+            className={
+              isMenuOpen
+                ? styles.menuExpandedReturn
+                : styles.menuCollapsedReturn
+            }
+          ></div>
+          {isMenuOpen && "Go back"}
+        </GoBackButton>
       </aside>
     </div>
   );

@@ -1,4 +1,4 @@
-.button {
+.buttonRegular {
   padding: 2rem 3rem;
   background-color: var(--primary-black);
   color: var(--secondary-button-txt);
@@ -8,6 +8,26 @@
   z-index: 9999;
   transition: transform 0.3s ease;
 }
-.button:hover {
-    transform: scale(1.1);
+.buttonRegular:hover {
+  transform: scale(1.1);
+}
+.menuExpandedButtonGoBack,
+.menuCollapsedButtonGoBack {
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.menuExpandedButtonGoBack {
+  background: transparent;
+  color: var(--secondary-button-txt);
+  font-size: 1.4rem;
+  gap: 1rem;
+}
+.menuCollapsedButtonGoBack {
+  background-color: var(--primary-green);
+  width: 100%;
+  height: 4rem;
+  border-radius: 0.5rem;
+  justify-content: center;
 }
