@@ -15,7 +15,7 @@ function page() {
     setIsMenuOpen((prev) => !prev);
   };
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.container}>
       <aside
         className={isMenuOpen ? styles.asideExpanded : styles.asideCollapsed}
       >
@@ -28,7 +28,7 @@ function page() {
             }
           >
             <Image src={devImg} alt="placeholder alt" />
-            {isMenuOpen && <p>John Doe</p>}
+            {isMenuOpen && <h1>John Doe</h1>}
           </div>
           <PortfolioList
             data={navItems}

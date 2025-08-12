@@ -1,10 +1,13 @@
-.wrapper {
+.container {
   width: 100vw;
 }
 .devInfoWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.devInfoWrapper h1 {
+  font-size: var(--txt-fs);
 }
 .asideExpanded,
 .asideCollapsed {
