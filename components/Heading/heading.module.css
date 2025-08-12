@@ -1,8 +1,0 @@
-.headlineContainer {
-    display: flex;
-    gap: 1rem;
-}
-.headline {
-  font-size: var(--headline-2-fs);
-  color: var(--primary-green);
-}

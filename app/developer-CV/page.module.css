@@ -1,5 +1,7 @@
 .container {
   width: 100vw;
+  display: flex;
+  gap: 8rem;
 }
 .devInfoWrapper {
   display: flex;
@@ -85,4 +87,13 @@
 .menuCollapsedReturn {
   border-left: 1px solid var(--primary-black);
   border-bottom: 1px solid var(--primary-black);
+}
+.CVSectionsContainer {
+  margin: 5rem 0;
+}
+.CVSectionsContainer article {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-bottom: 5rem;
 }

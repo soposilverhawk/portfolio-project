@@ -7,6 +7,7 @@ import Image from "next/image";
 import PortfolioList from "@/components/PortfolioLists/PortfolioList";
 import GoBackButton from "../../components/Button/Button";
 import { useRouter } from "next/navigation";
+import ProfileSections from "@/components/ProfileSections/ProfileSections";
 
 function page() {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
@@ -56,6 +57,9 @@ function page() {
           {isMenuOpen && "Go back"}
         </GoBackButton>
       </aside>
+      <main className={styles.CVSectionsContainer}>
+       <ProfileSections />
+      </main>
     </div>
   );
 }
