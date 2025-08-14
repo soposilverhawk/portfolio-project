@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./ProfileSections.module.css";
 import Image from "next/image";
 import editIcon from "../../public/portfolioPage/edit-icon.png";
+import SkillsSection from "../SkillsSection/SkillsSection";
 
 export default function ProfileSections() {
   // About me text state
@@ -311,6 +312,26 @@ export default function ProfileSections() {
             + Add Experience
           </button>
         )}
+      </section>
+
+      {/* Skills section */}
+      <section>
+        <header className={styles.header}>
+          <h2>
+            <span className={styles.title}>Skills</span>
+            <button
+              className={styles.editBtn}
+              onClick={() => setExperienceEditing(!experienceEditing)}
+              aria-label={
+                experienceEditing ? "Stop editing Experience" : "Edit Experience"
+              }
+              title={experienceEditing ? "Stop editing Experience" : "Edit Experience"}
+            >
+              <Image src={editIcon} alt="Edit icon" />
+            </button>
+          </h2>
+        </header>
+        <SkillsSection />
       </section>
     </div>
   );
