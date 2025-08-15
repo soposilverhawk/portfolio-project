@@ -13,59 +13,56 @@ function SkillsSection({ skillSet, setSkillSet, skillsEditing }) {
 
   const addSkill = () => {
     const newSkillEntry = { skill: skillName, value: skillRange };
-    setSkillSet((prevEntries) => ([
-      ...prevEntries,
-      newSkillEntry,
-    ]));
+    setSkillSet((prevEntries) => [...prevEntries, newSkillEntry]);
     setSkillName("");
     setSkillRange(1);
   };
   return (
     <>
-      {skillsEditing && (
-        <Box
-          sx={{
-            padding: "2rem",
-            border: "1px solid #26C17E",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            alignItems: "flex-start",
-            height: "20rem",
-          }}
-        >
-          <Box>
-            <label htmlFor="name" className={styles.label}>
-              Skill name:
-            </label>
-            <input
-              name="name"
-              placeholder="Enter skill name"
-              value={skillName}
-              onChange={(e) => setSkillName(e.target.value)}
-              className={styles.input}
-            />
-          </Box>
-          <Box>
-            <label htmlFor="range" className={styles.label}>
-              Skill range:
-            </label>
-            <input
-              type="number"
-              max="10"
-              min="1"
-              name="range"
-              placeholder="Enter skill range (1-10)"
-              value={skillRange}
-              onChange={(e) => setSkillRange(e.target.value)}
-              className={styles.input}
-            />
-          </Box>
-          <Button variant="regular" onclick={addSkill}>
-            Add Skill
-          </Button>
+      <Box
+        sx={{
+          padding: "2rem",
+          border: "1px solid #26C17E",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          alignItems: "flex-start",
+          height: "20rem",
+          opacity: skillsEditing ? 1 : 0,
+          maxHeight: skillsEditing ? "20rem" : 0,
+          transition: "all 0.3s ease"
+        }}
+      >
+        <Box>
+          <label htmlFor="name" className={styles.label}>
+            Skill name:
+          </label>
+          <input
+            name="name"
+            value={skillName}
+            onChange={(e) => setSkillName(e.target.value)}
+            className={styles.input}
+          />
         </Box>
-      )}
+        <Box>
+          <label htmlFor="range" className={styles.label}>
+            Skill range:
+          </label>
+          <input
+            type="number"
+            max="10"
+            min="1"
+            name="range"
+            placeholder="Enter skill range (1-10)"
+            value={skillRange}
+            onChange={(e) => setSkillRange(e.target.value)}
+            className={styles.input}
+          />
+        </Box>
+        <Button variant="regular" onclick={addSkill}>
+          Add Skill
+        </Button>
+      </Box>
       <BarChart
         layout="horizontal"
         height={300}
@@ -109,7 +106,7 @@ function SkillsSection({ skillSet, setSkillSet, skillsEditing }) {
             fill: "#000", // make Y axis labels visible
             fontWeight: "bold",
           },
-          mt: "4rem"
+          mt: skillsEditing ? "4rem" : ""
         }}
       />
     </>
