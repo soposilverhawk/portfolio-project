@@ -4,6 +4,7 @@ import Image from "next/image";
 import editIcon from "../../public/portfolioPage/edit-icon.png";
 import SkillsSection from "../SkillsSection/SkillsSection";
 import Button from "../Button/Button";
+import {projects} from "../../data/portfolioListsData";
 
 export default function ProfileSections() {
   // About me text state
@@ -56,11 +57,11 @@ export default function ProfileSections() {
 
   // Skills state
   const [skillSet, setSkillSet] = useState([
-    {skill: "HTML", value: 10},
-    {skill: "CSS", value: 7},
-    {skill: "jQuery", value: 6},
-    {skill: "PHP", value: 4},
-    {skill: "Laravel 2 (framework)", value: 3}
+    { skill: "HTML", value: 10 },
+    { skill: "CSS", value: 7 },
+    { skill: "jQuery", value: 6 },
+    { skill: "PHP", value: 4 },
+    { skill: "Laravel 2 (framework)", value: 3 },
   ]);
   const [skillsEditing, setSkillsEditing] = useState(false);
 
@@ -344,30 +345,61 @@ export default function ProfileSections() {
       </section>
 
       {/* Skills section */}
-      <section>
+      <section className={styles.skillSection}>
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>Skills</span>
             <button
               className={styles.editBtn}
               onClick={() => setSkillsEditing(!skillsEditing)}
-              aria-label={
-                skillsEditing
-                  ? "Stop editing Skills"
-                  : "Edit Skills"
-              }
-              title={
-                skillsEditing
-                  ? "Stop editing Skills"
-                  : "Edit Skills"
-              }
+              aria-label={skillsEditing ? "Stop editing Skills" : "Edit Skills"}
+              title={skillsEditing ? "Stop editing Skills" : "Edit Skills"}
             >
               <Image src={editIcon} alt="Edit icon" />
             </button>
           </h2>
-           {skillsEditing && <Button variant="regular" onclick={() => setSkillsEditing(false)}>cancel</Button>}
+          {skillsEditing && (
+            <Button variant="regular" onclick={() => setSkillsEditing(false)}>
+              cancel
+            </Button>
+          )}
         </header>
-          <SkillsSection skillSet={skillSet} setSkillSet={setSkillSet} skillsEditing={skillsEditing}/>
+        <SkillsSection
+          skillSet={skillSet}
+          setSkillSet={setSkillSet}
+          skillsEditing={skillsEditing}
+        />
+      </section>
+
+      {/* portfolio section */}
+      <section className={styles.section}>
+        <header className={styles.header}>
+          <h2>
+            <span className={styles.title}>Portfolio</span>
+            <button
+              className={styles.editBtn}
+              onClick={() => setSkillsEditing(!skillsEditing)}
+              aria-label={skillsEditing ? "Stop editing Skills" : "Edit Skills"}
+              title={skillsEditing ? "Stop editing Skills" : "Edit Skills"}
+            >
+              <Image src={editIcon} alt="Edit icon" />
+            </button>
+          </h2>
+        </header>
+        <div className={styles.portfolioContentContainer}>
+          <h3>
+            <span className={styles.highlightTxt}>All</span>
+            <span> / Code / </span>
+            <span className={styles.highlightTxt}>UI</span>
+          </h3>
+          <div className={styles.cardsWrapper}>
+            {projects.map(({name, img, id, ghLink}) => (
+              <a href={ghLink} placeholder={name} key={id}>
+                <Image src={img} alt={`${name} project image`}/>
+              </a>
+            ))}
+          </div>
+        </div>
       </section>
     </div>
   );

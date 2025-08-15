@@ -11,6 +11,7 @@ import phoneIcon from "../public/portfolioPage/contactIcons/phone-icon.png";
 import emailIcon from "../public/portfolioPage/contactIcons/email-icon.png";
 import twitterIcon from "../public/portfolioPage/contactIcons/twitter-icon.png";
 import facebookIcon from "../public/portfolioPage/contactIcons/facebook-icon.png";
+import projectImg1 from "../public/portfolioPage/cards/card-img-1.png";
 
 export const navItems = [
   {
@@ -84,5 +85,26 @@ export const contactItems = [
     icon: facebookIcon,
     link: "https://www.facebook.com/sophia.martell.33/",
     alt: "Facebook logo",
+  },
+];
+
+export const projects = [
+  {
+    name: "placeholder",
+    id: uuidv4(),
+    img: projectImg1,
+    ghLink: "https://github.com/soposilverhawk"
+  },
+  {
+    name: "placeholder",
+    id: uuidv4(),
+    img: projectImg1,
+    ghLink: "https://github.com/soposilverhawk"
+  },
+  {
+    name: "placeholder",
+    id: uuidv4(),
+    img: projectImg1,
+    ghLink: "https://github.com/soposilverhawk"
   },
 ];
