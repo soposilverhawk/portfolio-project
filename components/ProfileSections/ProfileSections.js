@@ -4,7 +4,9 @@ import Image from "next/image";
 import editIcon from "../../public/portfolioPage/edit-icon.png";
 import SkillsSection from "../SkillsSection/SkillsSection";
 import Button from "../Button/Button";
-import { projects } from "../../data/portfolioListsData";
+import projectImg1 from "../../public/portfolioPage/cards/card-img-1.png";
+import { v4 as uuidv4 } from "uuid";
+import PortfolioSection from "../portfolioSection/PortfolioSection";
 
 export default function ProfileSections() {
   // About me text state
@@ -64,6 +66,33 @@ export default function ProfileSections() {
     { skill: "Laravel 2 (framework)", value: 3 },
   ]);
   const [skillsEditing, setSkillsEditing] = useState(false);
+
+  // Portfolio state
+  const [projects, setProjects] = useState([
+    {
+      name: "placeholder",
+      id: uuidv4(),
+      img: projectImg1,
+      ghLink: "https://github.com/soposilverhawk",
+      description: "project 1",
+    },
+    {
+      name: "placeholder",
+      id: uuidv4(),
+      img: projectImg1,
+      ghLink: "https://github.com/soposilverhawk",
+      description: "project 2",
+    },
+    {
+      name: "placeholder",
+      id: uuidv4(),
+      img: projectImg1,
+      ghLink: "https://github.com/soposilverhawk",
+      description: "project 3",
+    },
+  ]);
+
+  const [projectsEditing, setProjectsEditing] = useState(false);
 
   // Handlers for editing About Me
   function toggleAboutEditing() {
@@ -378,35 +407,28 @@ export default function ProfileSections() {
             <span className={styles.title}>Portfolio</span>
             <button
               className={styles.editBtn}
-              onClick={() => setSkillsEditing(!skillsEditing)}
-              aria-label={skillsEditing ? "Stop editing Skills" : "Edit Skills"}
-              title={skillsEditing ? "Stop editing Skills" : "Edit Skills"}
+              onClick={() => setProjectsEditing(!projectsEditing)}
+              aria-label={
+                projectsEditing ? "Stop editing projects" : "Edit projects"
+              }
+              title={
+                projectsEditing ? "Stop editing projects" : "Edit projects"
+              }
             >
               <Image src={editIcon} alt="Edit icon" />
             </button>
           </h2>
+          {projectsEditing && (
+            <Button variant="regular" onclick={() => setProjectsEditing(false)}>
+              cancel
+            </Button>
+          )}
         </header>
-        <div className={styles.portfolioContentContainer}>
-          <h3>
-            <span className={styles.highlightTxt}>All</span>
-            <span> / Code / </span>
-            <span className={styles.highlightTxt}>UI</span>
-          </h3>
-          <div className={styles.cardsWrapper}>
-            {projects.map(({ name, img, id, ghLink, description }) => (
-              <a href={ghLink} key={id} target="_blank">
-                <div className={styles.cardInner}>
-                  <div className={styles.cardFront}>
-                    <Image src={img} alt={`${name} project image`} />
-                  </div>
-                  <div className={styles.cardBack}>
-                    <span>{description}</span>
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
+        <PortfolioSection
+          projects={projects}
+          setProjects={setProjects}
+          projectsEditing={projectsEditing}
+        />
       </section>
     </div>
   );

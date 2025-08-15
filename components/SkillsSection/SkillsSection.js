@@ -40,6 +40,7 @@ function SkillsSection({ skillSet, setSkillSet, skillsEditing }) {
           <input
             name="name"
             value={skillName}
+            placeholder="Enter skill name"
             onChange={(e) => setSkillName(e.target.value)}
             className={styles.input}
           />
@@ -53,7 +54,6 @@ function SkillsSection({ skillSet, setSkillSet, skillsEditing }) {
             max="10"
             min="1"
             name="range"
-            placeholder="Enter skill range (1-10)"
             value={skillRange}
             onChange={(e) => setSkillRange(e.target.value)}
             className={styles.input}
