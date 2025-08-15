@@ -401,7 +401,7 @@ export default function ProfileSections() {
       </section>
 
       {/* portfolio section */}
-      <section className={styles.section}>
+      <section className={styles.portfolioSection}>
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>Portfolio</span>
