@@ -93,18 +93,21 @@ export const projects = [
     name: "placeholder",
     id: uuidv4(),
     img: projectImg1,
-    ghLink: "https://github.com/soposilverhawk"
+    ghLink: "https://github.com/soposilverhawk",
+    description: "lorem",
   },
   {
     name: "placeholder",
     id: uuidv4(),
     img: projectImg1,
-    ghLink: "https://github.com/soposilverhawk"
+    ghLink: "https://github.com/soposilverhawk",
+    description: "lorem",
   },
   {
     name: "placeholder",
     id: uuidv4(),
     img: projectImg1,
-    ghLink: "https://github.com/soposilverhawk"
+    ghLink: "https://github.com/soposilverhawk",
+    description: "lorem",
   },
 ];

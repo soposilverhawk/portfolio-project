@@ -4,7 +4,7 @@ import Image from "next/image";
 import editIcon from "../../public/portfolioPage/edit-icon.png";
 import SkillsSection from "../SkillsSection/SkillsSection";
 import Button from "../Button/Button";
-import {projects} from "../../data/portfolioListsData";
+import { projects } from "../../data/portfolioListsData";
 
 export default function ProfileSections() {
   // About me text state
@@ -393,9 +393,16 @@ export default function ProfileSections() {
             <span className={styles.highlightTxt}>UI</span>
           </h3>
           <div className={styles.cardsWrapper}>
-            {projects.map(({name, img, id, ghLink}) => (
-              <a href={ghLink} placeholder={name} key={id}>
-                <Image src={img} alt={`${name} project image`}/>
+            {projects.map(({ name, img, id, ghLink, description }) => (
+              <a href={ghLink} key={id} target="_blank">
+                <div className={styles.cardInner}>
+                  <div className={styles.cardFront}>
+                    <Image src={img} alt={`${name} project image`} />
+                  </div>
+                  <div className={styles.cardBack}>
+                    <span>{description}</span>
+                  </div>
+                </div>
               </a>
             ))}
           </div>
