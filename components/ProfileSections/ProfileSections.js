@@ -365,7 +365,7 @@ export default function ProfileSections() {
               <Image src={editIcon} alt="Edit icon" />
             </button>
           </h2>
-           {skillsEditing && <Button variant="regular" onClick={() => setSkillsEditing(false)}>cancel</Button>}
+           {skillsEditing && <Button variant="regular" onclick={() => setSkillsEditing(false)}>cancel</Button>}
         </header>
           <SkillsSection skillSet={skillSet} setSkillSet={setSkillSet} skillsEditing={skillsEditing}/>
       </section>
