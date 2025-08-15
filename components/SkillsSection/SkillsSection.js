@@ -1,12 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
 import { BarChart } from "@mui/x-charts/BarChart";
+import { Box } from "@mui/material";
+import Button from "../Button/Button";
+import styles from "./skillsSection.module.css";
 
+function SkillsSection({ skillSet, setSkillSet, skillsEditing }) {
+  const [skillName, setSkillName] = useState("");
+  const [skillRange, setSkillRange] = useState(1);
 
-function SkillsSection() {
-  const skills = ["HTML", "CSS", "jQuery", "PHP", "Laravel 2 (framework)"];
-  const values = [10, 7, 6, 4, 3]; // skill levels
+  const skills = skillSet.map((entry) => entry.skill);
+  const values = skillSet.map((entry) => entry.value);
 
+  const addSkill = () => {
+    const newSkillEntry = { skill: skillName, value: skillRange };
+    setSkillSet((prevEntries) => ([
+      ...prevEntries,
+      newSkillEntry,
+    ]));
+    setSkillName("");
+    setSkillRange(1);
+  };
   return (
+    <>
+      {skillsEditing && (
+        <Box
+          sx={{
+            padding: "2rem",
+            border: "1px solid #26C17E",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            height: "20rem",
+          }}
+        >
+          <Box>
+            <label htmlFor="name" className={styles.label}>
+              Skill name:
+            </label>
+            <input
+              name="name"
+              placeholder="Enter skill name"
+              value={skillName}
+              onChange={(e) => setSkillName(e.target.value)}
+              className={styles.input}
+            />
+          </Box>
+          <Box>
+            <label htmlFor="range" className={styles.label}>
+              Skill range:
+            </label>
+            <input
+              type="number"
+              max="10"
+              min="1"
+              name="range"
+              placeholder="Enter skill range (1-10)"
+              value={skillRange}
+              onChange={(e) => setSkillRange(e.target.value)}
+              className={styles.input}
+            />
+          </Box>
+          <Button variant="regular" onclick={addSkill}>
+            Add Skill
+          </Button>
+        </Box>
+      )}
       <BarChart
         layout="horizontal"
         height={300}
@@ -50,8 +109,10 @@ function SkillsSection() {
             fill: "#000", // make Y axis labels visible
             fontWeight: "bold",
           },
+          mt: "4rem"
         }}
       />
+    </>
   );
 }
 

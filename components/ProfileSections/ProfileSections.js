@@ -3,6 +3,7 @@ import styles from "./ProfileSections.module.css";
 import Image from "next/image";
 import editIcon from "../../public/portfolioPage/edit-icon.png";
 import SkillsSection from "../SkillsSection/SkillsSection";
+import Button from "../Button/Button";
 
 export default function ProfileSections() {
   // About me text state
@@ -52,6 +53,16 @@ export default function ProfileSections() {
     },
   ]);
   const [experienceEditing, setExperienceEditing] = useState(false);
+
+  // Skills state
+  const [skillSet, setSkillSet] = useState([
+    {skill: "HTML", value: 10},
+    {skill: "CSS", value: 7},
+    {skill: "jQuery", value: 6},
+    {skill: "PHP", value: 4},
+    {skill: "Laravel 2 (framework)", value: 3}
+  ]);
+  const [skillsEditing, setSkillsEditing] = useState(false);
 
   // Handlers for editing About Me
   function toggleAboutEditing() {
@@ -168,7 +179,9 @@ export default function ProfileSections() {
               aria-label={
                 educationEditing ? "Stop editing Education" : "Edit Education"
               }
-              title={educationEditing ? "Stop editing Education" : "Edit Education"}
+              title={
+                educationEditing ? "Stop editing Education" : "Edit Education"
+              }
             >
               <Image src={editIcon} alt="Edit icon" />
             </button>
@@ -204,7 +217,9 @@ export default function ProfileSections() {
                       type="text"
                       className={styles.inputTitle}
                       value={title}
-                      onChange={(e) => updateEducationField(i, "title", e.target.value)}
+                      onChange={(e) =>
+                        updateEducationField(i, "title", e.target.value)
+                      }
                       onKeyDown={handleEducationKeyDown}
                     />
                   ) : (
@@ -243,9 +258,15 @@ export default function ProfileSections() {
               className={styles.editBtn}
               onClick={() => setExperienceEditing(!experienceEditing)}
               aria-label={
-                experienceEditing ? "Stop editing Experience" : "Edit Experience"
+                experienceEditing
+                  ? "Stop editing Experience"
+                  : "Edit Experience"
               }
-              title={experienceEditing ? "Stop editing Experience" : "Edit Experience"}
+              title={
+                experienceEditing
+                  ? "Stop editing Experience"
+                  : "Edit Experience"
+              }
             >
               <Image src={editIcon} alt="Edit icon" />
             </button>
@@ -260,7 +281,9 @@ export default function ProfileSections() {
                     type="text"
                     className={styles.inputCompany}
                     value={company}
-                    onChange={(e) => updateExperienceField(i, "company", e.target.value)}
+                    onChange={(e) =>
+                      updateExperienceField(i, "company", e.target.value)
+                    }
                     placeholder="Company"
                     onKeyDown={handleExperienceKeyDown}
                   />
@@ -268,7 +291,9 @@ export default function ProfileSections() {
                     type="text"
                     className={styles.inputDates}
                     value={dates}
-                    onChange={(e) => updateExperienceField(i, "dates", e.target.value)}
+                    onChange={(e) =>
+                      updateExperienceField(i, "dates", e.target.value)
+                    }
                     placeholder="Dates"
                     onKeyDown={handleExperienceKeyDown}
                   />
@@ -287,7 +312,9 @@ export default function ProfileSections() {
                     type="text"
                     className={styles.inputTitle}
                     value={role}
-                    onChange={(e) => updateExperienceField(i, "role", e.target.value)}
+                    onChange={(e) =>
+                      updateExperienceField(i, "role", e.target.value)
+                    }
                     onKeyDown={handleExperienceKeyDown}
                   />
                 ) : (
@@ -298,7 +325,9 @@ export default function ProfileSections() {
                 <textarea
                   className={styles.textarea}
                   value={description}
-                  onChange={(e) => updateExperienceField(i, "description", e.target.value)}
+                  onChange={(e) =>
+                    updateExperienceField(i, "description", e.target.value)
+                  }
                   onKeyDown={handleExperienceTextareaKeyDown}
                 />
               ) : (
@@ -321,17 +350,24 @@ export default function ProfileSections() {
             <span className={styles.title}>Skills</span>
             <button
               className={styles.editBtn}
-              onClick={() => setExperienceEditing(!experienceEditing)}
+              onClick={() => setSkillsEditing(!skillsEditing)}
               aria-label={
-                experienceEditing ? "Stop editing Experience" : "Edit Experience"
+                skillsEditing
+                  ? "Stop editing Skills"
+                  : "Edit Skills"
               }
-              title={experienceEditing ? "Stop editing Experience" : "Edit Experience"}
+              title={
+                skillsEditing
+                  ? "Stop editing Skills"
+                  : "Edit Skills"
+              }
             >
               <Image src={editIcon} alt="Edit icon" />
             </button>
           </h2>
+           {skillsEditing && <Button variant="regular" onClick={() => setSkillsEditing(false)}>cancel</Button>}
         </header>
-        <SkillsSection />
+          <SkillsSection skillSet={skillSet} setSkillSet={setSkillSet} skillsEditing={skillsEditing}/>
       </section>
     </div>
   );

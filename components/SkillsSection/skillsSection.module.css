@@ -1,0 +1,11 @@
+.label {
+    font-size: 1.4rem;
+    margin-right: 2rem;
+}
+.input {
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+.input[type="number"] {
+    width: 16rem;
+}
