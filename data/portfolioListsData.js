@@ -7,10 +7,7 @@ import experienceIcon from "../public/portfolioPage/navIcons/experience-icon.png
 import feedbacksIcon from "../public/portfolioPage/navIcons/feedbacks-icon.png";
 import skillsIcon from "../public/portfolioPage/navIcons/skills-icon.png";
 import portfolioIcon from "../public/portfolioPage/navIcons/suitcase-icon.png";
-import phoneIcon from "../public/portfolioPage/contactIcons/phone-icon.png";
-import emailIcon from "../public/portfolioPage/contactIcons/email-icon.png";
-import twitterIcon from "../public/portfolioPage/contactIcons/twitter-icon.png";
-import facebookIcon from "../public/portfolioPage/contactIcons/facebook-icon.png";
+
 
 export const navItems = [
   {
@@ -54,35 +51,5 @@ export const navItems = [
     desc: "Feedbacks",
     icon: feedbacksIcon,
     alt: "chatbubble icon",
-  },
-];
-
-export const contactItems = [
-  {
-    id: uuidv4(),
-    desc: "555 01 05 37",
-    icon: phoneIcon,
-    alt: "telephone icon",
-  },
-  {
-    id: uuidv4(),
-    desc: "darkness24lol@gmail.com",
-    icon: emailIcon,
-    alt: "email icon",
-  },
-  {
-    id: uuidv4(),
-    desc: "Twitter",
-    icon: twitterIcon,
-    link: "https://x.com/",
-    alt: "Twitter logo",
-    // modify to match your own
-  },
-  {
-    id: uuidv4(),
-    desc: "Facebook",
-    icon: facebookIcon,
-    link: "https://www.facebook.com/sophia.martell.33/",
-    alt: "Facebook logo",
   },
 ];

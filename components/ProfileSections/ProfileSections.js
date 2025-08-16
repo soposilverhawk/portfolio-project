@@ -7,6 +7,11 @@ import Button from "../Button/Button";
 import projectImg1 from "../../public/portfolioPage/cards/card-img-1.png";
 import { v4 as uuidv4 } from "uuid";
 import PortfolioSection from "../portfolioSection/PortfolioSection";
+import phoneIcon from "../../public/portfolioPage/contactIcons/phone-icon.png";
+import emailIcon from "../../public/portfolioPage/contactIcons/email-icon.png";
+import twitterIcon from "../../public/portfolioPage/contactIcons/twitter-icon.png";
+import facebookIcon from "../../public/portfolioPage/contactIcons/facebook-icon.png";
+import PortfolioList from "../PortfolioLists/PortfolioList";
 
 export default function ProfileSections() {
   // About me text state
@@ -94,6 +99,39 @@ export default function ProfileSections() {
 
   const [projectsEditing, setProjectsEditing] = useState(false);
 
+  // contacts state
+  const [contacts, setContacts] = useState([
+    {
+      id: uuidv4(),
+      desc: "555 01 05 37",
+      icon: phoneIcon,
+      alt: "telephone icon",
+    },
+    {
+      id: uuidv4(),
+      desc: "darkness24lol@gmail.com",
+      icon: emailIcon,
+      alt: "email icon",
+    },
+    {
+      id: uuidv4(),
+      desc: "Twitter",
+      icon: twitterIcon,
+      link: "https://x.com/",
+      alt: "Twitter logo",
+      // modify to match your own
+    },
+    {
+      id: uuidv4(),
+      desc: "Facebook",
+      icon: facebookIcon,
+      link: "https://www.facebook.com/sophia.martell.33/",
+      alt: "Facebook logo",
+    },
+  ]);
+
+  const [contactsEditing, setContactsEditing] = useState(false);
+
   // Handlers for editing About Me
   function toggleAboutEditing() {
     setAboutEditing(!aboutEditing);
@@ -125,6 +163,27 @@ export default function ProfileSections() {
       ...prev,
       { company: "", dates: "", role: "", description: "" },
     ]);
+  }
+
+  // handlers for contacts
+  function updateContactField(index, field, value) {
+    const newContacts = [...contacts];
+    newContacts[index][field] = value;
+    setContacts(newContacts);
+  }
+
+  function addContact() {
+    setContacts((prev) => [
+      ...prev,
+      { id: uuidv4(), desc: "", icon: "", link: "", alt: "" },
+    ]);
+  }
+
+  function handleContactsKeyDown(e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      setContactsEditing(false);
+    }
   }
 
   // Key handlers
@@ -429,6 +488,58 @@ export default function ProfileSections() {
           setProjects={setProjects}
           projectsEditing={projectsEditing}
         />
+      </section>
+      <section className={styles.section}>
+        <header className={styles.header}>
+          <h2>
+            <span className={styles.title}>Contacts</span>
+            <button
+              className={styles.editBtn}
+              onClick={() => setContactsEditing(!contactsEditing)}
+              aria-label={
+                contactsEditing ? "Stop editing contacts" : "Edit contacts"
+              }
+              title={
+                contactsEditing ? "Stop editing contacts" : "Edit contacts"
+              }
+            >
+              <Image src={editIcon} alt="Edit icon" />
+            </button>
+          </h2>
+        </header>
+        {contactsEditing ? (
+          <div className={styles.contactEditor}>
+            {contacts.map(({ id, desc, link }, i) => (
+              <div key={id} className={styles.contactItem}>
+                <input
+                  type="text"
+                  className={styles.contactInput}
+                  placeholder="Label (e.g., Phone, Email, Social Media)"
+                  value={desc}
+                  onChange={(e) =>
+                    updateContactField(i, "desc", e.target.value)
+                  }
+                  onKeyDown={handleContactsKeyDown}
+                />
+                <input
+                  type="text"
+                  className={styles.contactInput}
+                  placeholder="Value or link"
+                  value={link || ""}
+                  onChange={(e) =>
+                    updateContactField(i, "link", e.target.value)
+                  }
+                  onKeyDown={handleContactsKeyDown}
+                />
+              </div>
+            ))}
+            <button className={styles.addBtn} onClick={addContact}>
+              + Add Contact
+            </button>
+          </div>
+        ) : (
+          <PortfolioList data={contacts} variant="contactList" />
+        )}
       </section>
     </div>
   );
