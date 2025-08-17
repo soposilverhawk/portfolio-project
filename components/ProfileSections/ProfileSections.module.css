@@ -221,3 +221,42 @@
 .contactInput:focus {
   border-color: var(--primary-green); /* blue highlight */
 }
+.feedbackContainer {
+  /* background-color: red; */
+  margin-bottom: 4rem;
+}
+.feedbackEditCard {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 80px;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.fileInput {
+  margin-bottom: 0.5rem;
+}
+
+.feedbackMeta {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.authorImg {
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+.authorCompanyLink {
+  color: var(--primary-green);
+}

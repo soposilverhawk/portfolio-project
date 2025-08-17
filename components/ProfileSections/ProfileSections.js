@@ -12,6 +12,7 @@ import emailIcon from "../../public/portfolioPage/contactIcons/email-icon.png";
 import twitterIcon from "../../public/portfolioPage/contactIcons/twitter-icon.png";
 import facebookIcon from "../../public/portfolioPage/contactIcons/facebook-icon.png";
 import PortfolioList from "../PortfolioLists/PortfolioList";
+import feedbackAuthorPlaceholder from "../../public/portfolioPage/feedbackProviders/feedback-provider-1.png";
 
 export default function ProfileSections() {
   // About me text state
@@ -132,6 +133,30 @@ export default function ProfileSections() {
 
   const [contactsEditing, setContactsEditing] = useState(false);
 
+  // Feedback state
+  const [feedbacks, setFeedbacks] = useState([
+    {
+      id: uuidv4(),
+      feedback:
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. ",
+      author: "Martin Friman Programmer",
+      authorImg: feedbackAuthorPlaceholder,
+      authorCompany: "somesite.com",
+      authorCompanyLink: "https://btu.edu.ge/", // placeholder
+    },
+    {
+      id: uuidv4(),
+      feedback:
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. ",
+      author: "Martin Friman Programmer",
+      authorImg: feedbackAuthorPlaceholder,
+      authorCompany: "somesite.com",
+      authorCompanyLink: "https://btu.edu.ge/", // placeholder
+    },
+  ]);
+
+  const [feedbacksEditing, setFeedbacksEditing] = useState(false);
+
   // Handlers for editing About Me
   function toggleAboutEditing() {
     setAboutEditing(!aboutEditing);
@@ -184,6 +209,34 @@ export default function ProfileSections() {
       e.preventDefault();
       setContactsEditing(false);
     }
+  }
+
+  // handlers for feedbacks
+  const handleChange = (id, field, value) => {
+    setFeedbacks((prev) =>
+      prev.map((fb) => (fb.id === id ? { ...fb, [field]: value } : fb))
+    );
+  };
+
+  const handleImageUpload = (id, file) => {
+    const imgUrl = URL.createObjectURL(file);
+    setFeedbacks((prev) =>
+      prev.map((fb) => (fb.id === id ? { ...fb, authorImg: imgUrl } : fb))
+    );
+  };
+
+  function addFeedback() {
+    setFeedbacks((prev) => [
+      ...prev,
+      {
+        id: uuidv4(),
+        feedback: "",
+        author: "",
+        authorImg: "",
+        authorCompany: "",
+        authorCompanyLink: "",
+      },
+    ]);
   }
 
   // Key handlers
@@ -489,6 +542,8 @@ export default function ProfileSections() {
           projectsEditing={projectsEditing}
         />
       </section>
+
+      {/* Contacts section */}
       <section className={styles.section}>
         <header className={styles.header}>
           <h2>
@@ -539,6 +594,140 @@ export default function ProfileSections() {
           </div>
         ) : (
           <PortfolioList data={contacts} variant="contactList" />
+        )}
+      </section>
+
+      {/* Feedbacks section */}
+      <section className={styles.section}>
+        <header className={styles.header}>
+          <h2>
+            <span className={styles.title}>Feedbacks</span>
+            <button
+              className={styles.editBtn}
+              onClick={() => setFeedbacksEditing(!feedbacksEditing)}
+              aria-label={
+                feedbacksEditing ? "Stop editing feedbacks" : "Edit feedbacks"
+              }
+              title={
+                feedbacksEditing ? "Stop editing feedbacks" : "Edit feedbacks"
+              }
+            >
+              <Image src={editIcon} alt="Edit icon" />
+            </button>
+          </h2>
+        </header>
+
+        {feedbacksEditing ? (
+          <div>
+            {feedbacks.map(
+              ({
+                id,
+                feedback,
+                author,
+                authorImg,
+                authorCompany,
+                authorCompanyLink,
+              }) => (
+                <div key={id} className={styles.feedbackEditCard}>
+                  <textarea
+                    value={feedback}
+                    onChange={(e) =>
+                      handleChange(id, "feedback", e.target.value)
+                    }
+                    className={styles.textarea}
+                  />
+
+                  <input
+                    type="text"
+                    value={author}
+                    onChange={(e) => handleChange(id, "author", e.target.value)}
+                    placeholder="Author name"
+                    className={styles.input}
+                  />
+
+                  <input
+                    type="text"
+                    value={authorCompany}
+                    onChange={(e) =>
+                      handleChange(id, "authorCompany", e.target.value)
+                    }
+                    placeholder="Company name"
+                    className={styles.input}
+                  />
+
+                  <input
+                    type="url"
+                    value={authorCompanyLink}
+                    onChange={(e) =>
+                      handleChange(id, "authorCompanyLink", e.target.value)
+                    }
+                    placeholder="Company link"
+                    className={styles.input}
+                  />
+
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) =>
+                      e.target.files && handleImageUpload(id, e.target.files[0])
+                    }
+                    className={styles.fileInput}
+                  />
+
+                  {authorImg && (
+                    <Image
+                      src={authorImg}
+                      alt={author}
+                      width={50}
+                      height={50}
+                    />
+                  )}
+                </div>
+              )
+            )}
+            <button className={styles.addBtn} onClick={addFeedback}>
+              + Add Feedback
+            </button>
+          </div>
+        ) : (
+          <div>
+            {feedbacks.map(
+              ({
+                id,
+                feedback,
+                author,
+                authorImg,
+                authorCompany,
+                authorCompanyLink,
+              }) => (
+                <div key={id} className={styles.feedbackContainer}>
+                  <p className={styles.contentSection}>{feedback}</p>
+                  <div className={styles.feedbackMeta}>
+                    {authorImg && (
+                      <Image
+                        src={authorImg}
+                        alt={author}
+                        width={50}
+                        height={50}
+                        className={styles.authorImg}
+                      />
+                    )}
+                    <span>
+                      {author},{" "}
+                      <a
+                        href={authorCompanyLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.authorCompanyLink}
+                      >
+                        {authorCompany}
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              )
+            )}
+          </div>
         )}
       </section>
     </div>
