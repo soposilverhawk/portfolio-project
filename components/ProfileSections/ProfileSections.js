@@ -14,7 +14,7 @@ import facebookIcon from "../../public/portfolioPage/contactIcons/facebook-icon.
 import PortfolioList from "../PortfolioLists/PortfolioList";
 import feedbackAuthorPlaceholder from "../../public/portfolioPage/feedbackProviders/feedback-provider-1.png";
 
-export default function ProfileSections() {
+export default function ProfileSections({ isOwner }) {
   // About me text state
   const [aboutText, setAboutText] = useState(
     `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat et, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque`
@@ -288,14 +288,16 @@ export default function ProfileSections() {
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>About me</span>
-            <button
-              className={styles.editBtn}
-              onClick={toggleAboutEditing}
-              aria-label="Edit About me"
-              title="Edit About me"
-            >
-              <Image src={editIcon} alt="Edit icon" />
-            </button>
+            {isOwner && (
+              <button
+                className={styles.editBtn}
+                onClick={toggleAboutEditing}
+                aria-label="Edit About me"
+                title="Edit About me"
+              >
+                <Image src={editIcon} alt="Edit icon" />
+              </button>
+            )}
           </h2>
         </header>
         {aboutEditing ? (
@@ -315,18 +317,20 @@ export default function ProfileSections() {
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>Education</span>
-            <button
-              className={styles.editBtn}
-              onClick={() => setEducationEditing(!educationEditing)}
-              aria-label={
-                educationEditing ? "Stop editing Education" : "Edit Education"
-              }
-              title={
-                educationEditing ? "Stop editing Education" : "Edit Education"
-              }
-            >
-              <Image src={editIcon} alt="Edit icon" />
-            </button>
+            {isOwner && (
+              <button
+                className={styles.editBtn}
+                onClick={() => setEducationEditing(!educationEditing)}
+                aria-label={
+                  educationEditing ? "Stop editing Education" : "Edit Education"
+                }
+                title={
+                  educationEditing ? "Stop editing Education" : "Edit Education"
+                }
+              >
+                <Image src={editIcon} alt="Edit icon" />
+              </button>
+            )}
           </h2>
         </header>
         <div className={styles.timeline}>
@@ -396,22 +400,24 @@ export default function ProfileSections() {
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>Experience</span>
-            <button
-              className={styles.editBtn}
-              onClick={() => setExperienceEditing(!experienceEditing)}
-              aria-label={
-                experienceEditing
-                  ? "Stop editing Experience"
-                  : "Edit Experience"
-              }
-              title={
-                experienceEditing
-                  ? "Stop editing Experience"
-                  : "Edit Experience"
-              }
-            >
-              <Image src={editIcon} alt="Edit icon" />
-            </button>
+            {isOwner && (
+              <button
+                className={styles.editBtn}
+                onClick={() => setExperienceEditing(!experienceEditing)}
+                aria-label={
+                  experienceEditing
+                    ? "Stop editing Experience"
+                    : "Edit Experience"
+                }
+                title={
+                  experienceEditing
+                    ? "Stop editing Experience"
+                    : "Edit Experience"
+                }
+              >
+                <Image src={editIcon} alt="Edit icon" />
+              </button>
+            )}
           </h2>
         </header>
         {experience.map(({ company, dates, role, description }, i) => (
@@ -490,14 +496,18 @@ export default function ProfileSections() {
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>Skills</span>
-            <button
-              className={styles.editBtn}
-              onClick={() => setSkillsEditing(!skillsEditing)}
-              aria-label={skillsEditing ? "Stop editing Skills" : "Edit Skills"}
-              title={skillsEditing ? "Stop editing Skills" : "Edit Skills"}
-            >
-              <Image src={editIcon} alt="Edit icon" />
-            </button>
+            {isOwner && (
+              <button
+                className={styles.editBtn}
+                onClick={() => setSkillsEditing(!skillsEditing)}
+                aria-label={
+                  skillsEditing ? "Stop editing Skills" : "Edit Skills"
+                }
+                title={skillsEditing ? "Stop editing Skills" : "Edit Skills"}
+              >
+                <Image src={editIcon} alt="Edit icon" />
+              </button>
+            )}
           </h2>
           {skillsEditing && (
             <Button variant="regular" onclick={() => setSkillsEditing(false)}>
@@ -517,18 +527,20 @@ export default function ProfileSections() {
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>Portfolio</span>
-            <button
-              className={styles.editBtn}
-              onClick={() => setProjectsEditing(!projectsEditing)}
-              aria-label={
-                projectsEditing ? "Stop editing projects" : "Edit projects"
-              }
-              title={
-                projectsEditing ? "Stop editing projects" : "Edit projects"
-              }
-            >
-              <Image src={editIcon} alt="Edit icon" />
-            </button>
+            {isOwner && (
+              <button
+                className={styles.editBtn}
+                onClick={() => setProjectsEditing(!projectsEditing)}
+                aria-label={
+                  projectsEditing ? "Stop editing projects" : "Edit projects"
+                }
+                title={
+                  projectsEditing ? "Stop editing projects" : "Edit projects"
+                }
+              >
+                <Image src={editIcon} alt="Edit icon" />
+              </button>
+            )}
           </h2>
           {projectsEditing && (
             <Button variant="regular" onclick={() => setProjectsEditing(false)}>
@@ -548,18 +560,20 @@ export default function ProfileSections() {
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>Contacts</span>
-            <button
-              className={styles.editBtn}
-              onClick={() => setContactsEditing(!contactsEditing)}
-              aria-label={
-                contactsEditing ? "Stop editing contacts" : "Edit contacts"
-              }
-              title={
-                contactsEditing ? "Stop editing contacts" : "Edit contacts"
-              }
-            >
-              <Image src={editIcon} alt="Edit icon" />
-            </button>
+            {isOwner && (
+              <button
+                className={styles.editBtn}
+                onClick={() => setContactsEditing(!contactsEditing)}
+                aria-label={
+                  contactsEditing ? "Stop editing contacts" : "Edit contacts"
+                }
+                title={
+                  contactsEditing ? "Stop editing contacts" : "Edit contacts"
+                }
+              >
+                <Image src={editIcon} alt="Edit icon" />
+              </button>
+            )}
           </h2>
         </header>
         {contactsEditing ? (

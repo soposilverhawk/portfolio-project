@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import { navItems } from "@/data/portfolioListsData";
 import devImg from "../../public/homepage/developer-img.png";
@@ -11,10 +11,22 @@ import ProfileSections from "@/components/ProfileSections/ProfileSections";
 
 function page() {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isOwner, setIsOwner] = useState(false);
+  const [checkedPassword, setCheckedPassword] = useState(false);
   const router = useRouter();
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
+
+  useEffect(() => {
+    const password = prompt("Enter password for owner access:");
+    if (password === process.env.NEXT_PUBLIC_OWNER_PASSWORD) {
+      setIsOwner(true);
+    }
+    setCheckedPassword(true);
+  }, [])
+
+  if (!checkedPassword) return null;
 
   return (
     <div className={styles.container}>
@@ -59,7 +71,7 @@ function page() {
         </GoBackButton>
       </aside>
       <main className={styles.CVSectionsContainer}>
-       <ProfileSections />
+       <ProfileSections isOwner={isOwner}/>
       </main>
     </div>
   );
