@@ -15,6 +15,7 @@ function page() {
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
+
   return (
     <div className={styles.container}>
       <aside

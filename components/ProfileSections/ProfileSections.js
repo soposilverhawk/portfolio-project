@@ -284,7 +284,7 @@ export default function ProfileSections() {
   return (
     <div className={styles.container}>
       {/* About Me Section */}
-      <section className={styles.section}>
+      <section className={styles.section} id="about me">
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>About me</span>
@@ -311,7 +311,7 @@ export default function ProfileSections() {
       </section>
 
       {/* Education Section */}
-      <section className={styles.section}>
+      <section className={styles.section} id="education">
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>Education</span>
@@ -392,7 +392,7 @@ export default function ProfileSections() {
       </section>
 
       {/* Experience Section */}
-      <section className={styles.section}>
+      <section className={styles.section} id="experience">
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>Experience</span>
@@ -486,7 +486,7 @@ export default function ProfileSections() {
       </section>
 
       {/* Skills section */}
-      <section className={styles.skillSection}>
+      <section className={styles.skillSection} id="skills">
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>Skills</span>
@@ -513,7 +513,7 @@ export default function ProfileSections() {
       </section>
 
       {/* portfolio section */}
-      <section className={styles.portfolioSection}>
+      <section className={styles.portfolioSection} id="portfolio">
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>Portfolio</span>
@@ -544,7 +544,7 @@ export default function ProfileSections() {
       </section>
 
       {/* Contacts section */}
-      <section className={styles.section}>
+      <section className={styles.section} id="contacts">
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>Contacts</span>
@@ -598,7 +598,7 @@ export default function ProfileSections() {
       </section>
 
       {/* Feedbacks section */}
-      <section className={styles.section}>
+      <section className={styles.section} id="feedbacks">
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>Feedbacks</span>
