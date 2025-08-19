@@ -22,8 +22,6 @@ function PortfolioList({ data, variant, isMenuOpen = null }) {
               : ""
           }
         >
-          {/* <Image src={icon} alt={alt} />
-          {variant === "devInfo" && isMenuOpen && desc} */}
           <Image src={icon} alt={alt} />
           {variant === "devInfo" && isMenuOpen && (
             <a href={`#${desc}`} className={styles.devInfoListLink}>
