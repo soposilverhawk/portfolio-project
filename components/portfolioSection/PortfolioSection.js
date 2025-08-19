@@ -136,6 +136,7 @@ function PortfolioSection({ projects, setProjects, projectsEditing }) {
                   )}
                 </div>
                 <div className={styles.cardBack}>
+                  <h4>{name}</h4>
                   <span>{description}</span>
                 </div>
               </div>

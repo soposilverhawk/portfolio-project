@@ -4,7 +4,6 @@ import Image from "next/image";
 import editIcon from "../../public/portfolioPage/edit-icon.png";
 import SkillsSection from "../SkillsSection/SkillsSection";
 import Button from "../Button/Button";
-import projectImg1 from "../../public/portfolioPage/cards/card-img-1.png";
 import { v4 as uuidv4 } from "uuid";
 import PortfolioSection from "../portfolioSection/PortfolioSection";
 import phoneIcon from "../../public/portfolioPage/contactIcons/phone-icon.png";
@@ -13,33 +12,30 @@ import twitterIcon from "../../public/portfolioPage/contactIcons/twitter-icon.pn
 import facebookIcon from "../../public/portfolioPage/contactIcons/facebook-icon.png";
 import PortfolioList from "../PortfolioLists/PortfolioList";
 import feedbackAuthorPlaceholder from "../../public/portfolioPage/feedbackProviders/feedback-provider-1.png";
+import htmlGrouProject from "../../public/portfolioPage/cards/html-group-project.jpeg";
+import reactGroupProject from "../../public/portfolioPage/cards/react-group-project.jpeg";
+import btuAISoloProject from "../../public/portfolioPage/cards/btu-ai-solo-project.jpeg"
 
 export default function ProfileSections({ isOwner }) {
   // About me text state
   const [aboutText, setAboutText] = useState(
-    `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat et, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque`
+    "I'm a 23 years old aspiring front-end developer with a passion for creating intuitive and engaging web experiences. I started my journey through self-study. My dedication led me to a UN and BTU sponsored web-development program, where I successfully completed the front-end track (HTML, CSS, JS, REACT, NEXT.JS). Currently I'm looking to get hands on experience and mentorship through real-life projects and hopefully bring value to the company as I further progress in the field."
   );
   const [aboutEditing, setAboutEditing] = useState(false);
 
   // Education state
   const [education, setEducation] = useState([
     {
-      year: 1990,
-      title: "Title",
+      year: "2025 - current",
+      title: "Women in AI - web development course",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.",
+        "Women in AI is part of the women’s economic empowerment component of the UN Women’s project “Good governance for gender equality in Georgia”, which is implemented by BTU with the support of the Norwegian government. Project aims to empower and upskill 200 women in Georgia by providing them with comprehensive education and hands-on experience in the fields of Artificial Intelligence (AI) and Web Development.",
     },
     {
-      year: 1991,
-      title: "Title",
+      year: "2019 - 2023",
+      title: "Bachelor of Humanities - History",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.",
-    },
-    {
-      year: 1992,
-      title: "Title",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.",
+        "The Bachelor of Humanities in History Education is an undergraduate program focused on providing students with a deep understanding of historical events, societies, and cultures, combined with the skills to effectively teach this knowledge. Students explore diverse historical periods, critical thinking, research methodologies, and educational theories, preparing them to foster historical literacy and analytical skills in learners. Graduates are equipped for careers in teaching, education, cultural institutions, or further studies in history and humanities.",
     },
   ]);
   const [educationEditing, setEducationEditing] = useState(false);
@@ -47,18 +43,18 @@ export default function ProfileSections({ isOwner }) {
   // Experience state
   const [experience, setExperience] = useState([
     {
-      company: "Google",
-      dates: "2013-2014",
-      role: "Front-end developer / php programmer",
+      company: "Majorel (TP)",
+      dates: "2025 - current",
+      role: "Customer Trust and Safety Expert",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla",
+        "Ensuring safety of customers across the world on a popular social media platform. Responsibilities include: Filtering and restricting/removing heavy or violative content. Staying up to date with fast-paced changing market and trends through self-studies, communicating with coaches to ensure no ambiguous edge cases are left out.",
     },
     {
-      company: "Twitter",
-      dates: "2012",
-      role: "Web Developer",
+      company: "Blazing Boost SRL",
+      dates: "2021 - 2023",
+      role: "Customer Service Representative",
       description:
-        "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim",
+        "Customer Service Representative for an e-commerce website in a video gaming industry. Responsibilities included: Active communication with both customers and service providers via written-communication platforms (discord, email), handling service completions, handling problematic services/customers, managing customer databases.",
     },
   ]);
   const [experienceEditing, setExperienceEditing] = useState(false);
@@ -66,35 +62,40 @@ export default function ProfileSections({ isOwner }) {
   // Skills state
   const [skillSet, setSkillSet] = useState([
     { skill: "HTML", value: 10 },
-    { skill: "CSS", value: 7 },
-    { skill: "jQuery", value: 6 },
-    { skill: "PHP", value: 4 },
-    { skill: "Laravel 2 (framework)", value: 3 },
+    { skill: "CSS", value: 7.5 },
+    { skill: "SCSS/SASS", value: 6.5 },
+    { skill: "Bootstrap", value: 5 },
+    { skill: "Javascript", value: 8 },
+    { skill: "React", value: 6.5 },
+    { skill: "clickUp", value: 6 },
+    { skill: "Git", value: 7 },
   ]);
   const [skillsEditing, setSkillsEditing] = useState(false);
 
   // Portfolio state
   const [projects, setProjects] = useState([
     {
-      name: "placeholder",
+      name: "Women in AI - HTML/CSS group project",
       id: uuidv4(),
-      img: projectImg1,
-      ghLink: "https://github.com/soposilverhawk",
-      description: "project 1",
+      img: htmlGrouProject,
+      ghLink: "https://github.com/soposilverhawk/Women-in-AI-group-project",
+      description:
+        "A simple single page group project made with HTML, CSS preprocessors SCSS/SASS and vanilla Javascript. My main responsibility here was project management via clickUp and Github as a more experienced developer in the team.",
     },
     {
-      name: "placeholder",
+      name: "Women in AI - React group project",
       id: uuidv4(),
-      img: projectImg1,
-      ghLink: "https://github.com/soposilverhawk",
-      description: "project 2",
+      img: reactGroupProject,
+      ghLink: "https://github.com/Miranda-K12/Desingo",
+      description:
+        "A group project of react SPA with fully functional navigation. My part in the group project were static components (footer, header and call to action banner with their respective functionalities).",
     },
     {
-      name: "placeholder",
+      name: "Women in AI - React module solo project",
       id: uuidv4(),
-      img: projectImg1,
-      ghLink: "https://github.com/soposilverhawk",
-      description: "project 3",
+      img: btuAISoloProject,
+      ghLink: "https://soposilverhawk.github.io/BTU-AI/",
+      description: "Solo React SPA with fully functional navigation, mockup chat with support, facilitating university's location, contact information, contact forms and subroutes.",
     },
   ]);
 
@@ -116,14 +117,6 @@ export default function ProfileSections({ isOwner }) {
     },
     {
       id: uuidv4(),
-      desc: "Twitter",
-      icon: twitterIcon,
-      link: "https://x.com/",
-      alt: "Twitter logo",
-      // modify to match your own
-    },
-    {
-      id: uuidv4(),
       desc: "Facebook",
       icon: facebookIcon,
       link: "https://www.facebook.com/sophia.martell.33/",
@@ -142,7 +135,7 @@ export default function ProfileSections({ isOwner }) {
       author: "Martin Friman Programmer",
       authorImg: feedbackAuthorPlaceholder,
       authorCompany: "somesite.com",
-      authorCompanyLink: "https://btu.edu.ge/", // placeholder
+      authorCompanyLink: "https://btu.edu.ge/", 
     },
     {
       id: uuidv4(),
@@ -151,7 +144,7 @@ export default function ProfileSections({ isOwner }) {
       author: "Martin Friman Programmer",
       authorImg: feedbackAuthorPlaceholder,
       authorCompany: "somesite.com",
-      authorCompanyLink: "https://btu.edu.ge/", // placeholder
+      authorCompanyLink: "https://btu.edu.ge/",
     },
   ]);
 
