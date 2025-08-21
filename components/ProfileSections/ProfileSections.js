@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./ProfileSections.module.css";
 import Image from "next/image";
 import editIcon from "../../public/portfolioPage/edit-icon.png";
@@ -14,141 +14,194 @@ import PortfolioList from "../PortfolioLists/PortfolioList";
 import feedbackAuthorPlaceholder from "../../public/portfolioPage/feedbackProviders/feedback-provider-1.png";
 import htmlGrouProject from "../../public/portfolioPage/cards/html-group-project.jpeg";
 import reactGroupProject from "../../public/portfolioPage/cards/react-group-project.jpeg";
-import btuAISoloProject from "../../public/portfolioPage/cards/btu-ai-solo-project.jpeg"
+import btuAISoloProject from "../../public/portfolioPage/cards/btu-ai-solo-project.jpeg";
 
 export default function ProfileSections({ isOwner }) {
   // About me text state
-  const [aboutText, setAboutText] = useState(
-    "I'm a 23 years old aspiring front-end developer with a passion for creating intuitive and engaging web experiences. I started my journey through self-study. My dedication led me to a UN and BTU sponsored web-development program, where I successfully completed the front-end track (HTML, CSS, JS, REACT, NEXT.JS). Currently I'm looking to get hands on experience and mentorship through real-life projects and hopefully bring value to the company as I further progress in the field."
-  );
+  const [aboutText, setAboutText] = useState(() => {
+    return (
+      localStorage.getItem("aboutText") ||
+      "I'm a 23 years old aspiring front-end developer with a passion for creating intuitive and engaging web experiences. I started my journey through self-study. My dedication led me to a UN and BTU sponsored web-development program, where I successfully completed the front-end track (HTML, CSS, JS, REACT, NEXT.JS). Currently I'm looking to get hands on experience and mentorship through real-life projects and hopefully bring value to the company as I further progress in the field."
+    );
+  });
   const [aboutEditing, setAboutEditing] = useState(false);
 
+  useEffect(() => {
+    localStorage.setItem("aboutText", aboutText);
+  }, [aboutText]);
+
   // Education state
-  const [education, setEducation] = useState([
-    {
-      year: "2025 - current",
-      title: "Women in AI - web development course",
-      description:
-        "Women in AI is part of the women’s economic empowerment component of the UN Women’s project “Good governance for gender equality in Georgia”, which is implemented by BTU with the support of the Norwegian government. Project aims to empower and upskill 200 women in Georgia by providing them with comprehensive education and hands-on experience in the fields of Artificial Intelligence (AI) and Web Development.",
-    },
-    {
-      year: "2019 - 2023",
-      title: "Bachelor of Humanities - History",
-      description:
-        "The Bachelor of Humanities in History Education is an undergraduate program focused on providing students with a deep understanding of historical events, societies, and cultures, combined with the skills to effectively teach this knowledge. Students explore diverse historical periods, critical thinking, research methodologies, and educational theories, preparing them to foster historical literacy and analytical skills in learners. Graduates are equipped for careers in teaching, education, cultural institutions, or further studies in history and humanities.",
-    },
-  ]);
+  const [education, setEducation] = useState(() => {
+    return (
+      JSON.parse(localStorage.getItem("education")) || [
+        {
+          year: "2025 - current",
+          title: "Women in AI - web development course",
+          description:
+            "Women in AI is part of the women’s economic empowerment component of the UN Women’s project “Good governance for gender equality in Georgia”, which is implemented by BTU with the support of the Norwegian government. Project aims to empower and upskill 200 women in Georgia by providing them with comprehensive education and hands-on experience in the fields of Artificial Intelligence (AI) and Web Development.",
+        },
+        {
+          year: "2019 - 2023",
+          title: "Bachelor of Humanities - History",
+          description:
+            "The Bachelor of Humanities in History Education is an undergraduate program focused on providing students with a deep understanding of historical events, societies, and cultures, combined with the skills to effectively teach this knowledge. Students explore diverse historical periods, critical thinking, research methodologies, and educational theories, preparing them to foster historical literacy and analytical skills in learners. Graduates are equipped for careers in teaching, education, cultural institutions, or further studies in history and humanities.",
+        },
+      ]
+    );
+  });
   const [educationEditing, setEducationEditing] = useState(false);
 
+  useEffect(() => {
+    localStorage.setItem("education", JSON.stringify(education));
+  }, [education]);
+
   // Experience state
-  const [experience, setExperience] = useState([
-    {
-      company: "Majorel (TP)",
-      dates: "2025 - current",
-      role: "Customer Trust and Safety Expert",
-      description:
-        "Ensuring safety of customers across the world on a popular social media platform. Responsibilities include: Filtering and restricting/removing heavy or violative content. Staying up to date with fast-paced changing market and trends through self-studies, communicating with coaches to ensure no ambiguous edge cases are left out.",
-    },
-    {
-      company: "Blazing Boost SRL",
-      dates: "2021 - 2023",
-      role: "Customer Service Representative",
-      description:
-        "Customer Service Representative for an e-commerce website in a video gaming industry. Responsibilities included: Active communication with both customers and service providers via written-communication platforms (discord, email), handling service completions, handling problematic services/customers, managing customer databases.",
-    },
-  ]);
+  const [experience, setExperience] = useState(() => {
+    return (
+      JSON.parse(localStorage.getItem("experience")) || [
+        {
+          company: "Majorel (TP)",
+          dates: "2025 - current",
+          role: "Customer Trust and Safety Expert",
+          description:
+            "Ensuring safety of customers across the world on a popular social media platform. Responsibilities include: Filtering and restricting/removing heavy or violative content. Staying up to date with fast-paced changing market and trends through self-studies, communicating with coaches to ensure no ambiguous edge cases are left out.",
+        },
+        {
+          company: "Blazing Boost SRL",
+          dates: "2021 - 2023",
+          role: "Customer Service Representative",
+          description:
+            "Customer Service Representative for an e-commerce website in a video gaming industry. Responsibilities included: Active communication with both customers and service providers via written-communication platforms (discord, email), handling service completions, handling problematic services/customers, managing customer databases.",
+        },
+      ]
+    );
+  });
   const [experienceEditing, setExperienceEditing] = useState(false);
 
+  useEffect(() => {
+    return localStorage.setItem("experience", JSON.stringify(experience));
+  }, [experience]);
+
   // Skills state
-  const [skillSet, setSkillSet] = useState([
-    { skill: "HTML", value: 10 },
-    { skill: "CSS", value: 7.5 },
-    { skill: "SCSS/SASS", value: 6.5 },
-    { skill: "Bootstrap", value: 5 },
-    { skill: "Javascript", value: 8 },
-    { skill: "React", value: 6.5 },
-    { skill: "clickUp", value: 6 },
-    { skill: "Git", value: 7 },
-  ]);
+  const [skillSet, setSkillSet] = useState(() => {
+    return (
+      JSON.parse(localStorage.getItem("skillSet")) || [
+        { skill: "HTML", value: 10 },
+        { skill: "CSS", value: 7.5 },
+        { skill: "SCSS/SASS", value: 6.5 },
+        { skill: "Bootstrap", value: 5 },
+        { skill: "Javascript", value: 8 },
+        { skill: "React", value: 6.5 },
+        { skill: "clickUp", value: 6 },
+        { skill: "Git", value: 7 },
+      ]
+    );
+  });
   const [skillsEditing, setSkillsEditing] = useState(false);
 
-  // Portfolio state
-  const [projects, setProjects] = useState([
-    {
-      name: "Women in AI - HTML/CSS group project",
-      id: uuidv4(),
-      img: htmlGrouProject,
-      ghLink: "https://github.com/soposilverhawk/Women-in-AI-group-project",
-      description:
-        "A simple single page group project made with HTML, CSS preprocessors SCSS/SASS and vanilla Javascript. My main responsibility here was project management via clickUp and Github as a more experienced developer in the team.",
-    },
-    {
-      name: "Women in AI - React group project",
-      id: uuidv4(),
-      img: reactGroupProject,
-      ghLink: "https://github.com/Miranda-K12/Desingo",
-      description:
-        "A group project of react SPA with fully functional navigation. My part in the group project were static components (footer, header and call to action banner with their respective functionalities).",
-    },
-    {
-      name: "Women in AI - React module solo project",
-      id: uuidv4(),
-      img: btuAISoloProject,
-      ghLink: "https://soposilverhawk.github.io/BTU-AI/",
-      description: "Solo React SPA with fully functional navigation, mockup chat with support, facilitating university's location, contact information, contact forms and subroutes.",
-    },
-  ]);
+  useEffect(() => {
+    return localStorage.setItem("skillSet", JSON.stringify(skillSet));
+  }, [skillSet]);
 
+  // Portfolio state
+  const [projects, setProjects] = useState(() => {
+    return (
+      JSON.parse(localStorage.getItem("projects")) || [
+        {
+          name: "Women in AI - HTML/CSS group project",
+          id: uuidv4(),
+          img: htmlGrouProject,
+          ghLink: "https://github.com/soposilverhawk/Women-in-AI-group-project",
+          description:
+            "A simple single page group project made with HTML, CSS preprocessors SCSS/SASS and vanilla Javascript. My main responsibility here was project management via clickUp and Github as a more experienced developer in the team.",
+        },
+        {
+          name: "Women in AI - React group project",
+          id: uuidv4(),
+          img: reactGroupProject,
+          ghLink: "https://github.com/Miranda-K12/Desingo",
+          description:
+            "A group project of react SPA with fully functional navigation. My part in the group project were static components (footer, header and call to action banner with their respective functionalities).",
+        },
+        {
+          name: "Women in AI - React module solo project",
+          id: uuidv4(),
+          img: btuAISoloProject,
+          ghLink: "https://soposilverhawk.github.io/BTU-AI/",
+          description:
+            "Solo React SPA with fully functional navigation, mockup chat with support, facilitating university's location, contact information, contact forms and subroutes.",
+        },
+      ]
+    );
+  });
   const [projectsEditing, setProjectsEditing] = useState(false);
 
-  // contacts state
-  const [contacts, setContacts] = useState([
-    {
-      id: uuidv4(),
-      desc: "555 01 05 37",
-      icon: phoneIcon,
-      alt: "telephone icon",
-    },
-    {
-      id: uuidv4(),
-      desc: "darkness24lol@gmail.com",
-      icon: emailIcon,
-      alt: "email icon",
-    },
-    {
-      id: uuidv4(),
-      desc: "Facebook",
-      icon: facebookIcon,
-      link: "https://www.facebook.com/sophia.martell.33/",
-      alt: "Facebook logo",
-    },
-  ]);
+  useEffect(() => {
+    return localStorage.setItem("projects", JSON.stringify(projects));
+  }, [projects]);
 
+  // contacts state
+  const [contacts, setContacts] = useState(() => {
+    return (
+      JSON.parse(localStorage.getItem("contacts")) || [
+        {
+          id: uuidv4(),
+          desc: "555 01 05 37",
+          icon: phoneIcon,
+          alt: "telephone icon",
+        },
+        {
+          id: uuidv4(),
+          desc: "darkness24lol@gmail.com",
+          icon: emailIcon,
+          alt: "email icon",
+        },
+        {
+          id: uuidv4(),
+          desc: "Facebook",
+          icon: facebookIcon,
+          link: "https://www.facebook.com/sophia.martell.33/",
+          alt: "Facebook logo",
+        },
+      ]
+    );
+  });
   const [contactsEditing, setContactsEditing] = useState(false);
 
-  // Feedback state
-  const [feedbacks, setFeedbacks] = useState([
-    {
-      id: uuidv4(),
-      feedback:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. ",
-      author: "Martin Friman Programmer",
-      authorImg: feedbackAuthorPlaceholder,
-      authorCompany: "somesite.com",
-      authorCompanyLink: "https://btu.edu.ge/", 
-    },
-    {
-      id: uuidv4(),
-      feedback:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. ",
-      author: "Martin Friman Programmer",
-      authorImg: feedbackAuthorPlaceholder,
-      authorCompany: "somesite.com",
-      authorCompanyLink: "https://btu.edu.ge/",
-    },
-  ]);
+  useEffect(() => {
+    return localStorage.setItem("contacts", JSON.stringify(contacts));
+  }, [contacts]);
 
+  // Feedback state
+  const [feedbacks, setFeedbacks] = useState(() => {
+    return (
+      JSON.parse(localStorage.getItem("feedbacks")) || [
+        {
+          id: uuidv4(),
+          feedback:
+            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. ",
+          author: "Martin Friman Programmer",
+          authorImg: feedbackAuthorPlaceholder,
+          authorCompany: "somesite.com",
+          authorCompanyLink: "https://btu.edu.ge/",
+        },
+        {
+          id: uuidv4(),
+          feedback:
+            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. ",
+          author: "Martin Friman Programmer",
+          authorImg: feedbackAuthorPlaceholder,
+          authorCompany: "somesite.com",
+          authorCompanyLink: "https://btu.edu.ge/",
+        },
+      ]
+    );
+  });
   const [feedbacksEditing, setFeedbacksEditing] = useState(false);
+
+  useEffect(() => {
+    return localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
+  }, [feedbacks]);
 
   // Handlers for editing About Me
   function toggleAboutEditing() {
