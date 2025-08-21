@@ -333,7 +333,7 @@ export default function ProfileSections({ isOwner }) {
                 <div className={styles.year}>
                   {educationEditing ? (
                     <input
-                      type="number"
+                      type="text"
                       className={styles.inputYear}
                       value={year}
                       onChange={(e) =>

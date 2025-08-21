@@ -93,7 +93,7 @@
   width: 2px;
   background-color: var(--primary-green);
   position: absolute;
-  top: 20px;
+  top: 4rem;
   bottom: -5px;
   left: 50%;
   transform: translateX(-50%);
