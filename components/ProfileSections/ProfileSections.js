@@ -8,7 +8,6 @@ import { v4 as uuidv4 } from "uuid";
 import PortfolioSection from "../portfolioSection/PortfolioSection";
 import phoneIcon from "../../public/portfolioPage/contactIcons/phone-icon.png";
 import emailIcon from "../../public/portfolioPage/contactIcons/email-icon.png";
-import twitterIcon from "../../public/portfolioPage/contactIcons/twitter-icon.png";
 import facebookIcon from "../../public/portfolioPage/contactIcons/facebook-icon.png";
 import PortfolioList from "../PortfolioLists/PortfolioList";
 import feedbackAuthorPlaceholder from "../../public/portfolioPage/feedbackProviders/feedback-provider-1.png";
@@ -79,7 +78,7 @@ export default function ProfileSections({ isOwner }) {
   const [experienceEditing, setExperienceEditing] = useState(false);
 
   useEffect(() => {
-    return localStorage.setItem("experience", JSON.stringify(experience));
+    localStorage.setItem("experience", JSON.stringify(experience));
   }, [experience]);
 
   // Skills state
@@ -100,8 +99,27 @@ export default function ProfileSections({ isOwner }) {
   const [skillsEditing, setSkillsEditing] = useState(false);
 
   useEffect(() => {
-    return localStorage.setItem("skillSet", JSON.stringify(skillSet));
+    localStorage.setItem("skillSet", JSON.stringify(skillSet));
   }, [skillSet]);
+
+  // Soft Skills state
+
+  const [softSkills, setSoftSkills] = useState(() => {
+    return (
+      JSON.parse(localStorage.getItem("soft skills")) || [
+        { skill: "Communication", value: 9 },
+        { skill: "Teamwork", value: 8 },
+        { skill: "Time management", value: 7 },
+        { skill: "Adaptability", value: 8 },
+        { skill: "Problem-solving", value: 7 },
+      ]
+    );
+  });
+  const [softSkillsEditing, setSoftSkillsEditing] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("soft skills", JSON.stringify(softSkills));
+  }, [softSkills]);
 
   // Portfolio state
   const [projects, setProjects] = useState(() => {
@@ -137,7 +155,7 @@ export default function ProfileSections({ isOwner }) {
   const [projectsEditing, setProjectsEditing] = useState(false);
 
   useEffect(() => {
-    return localStorage.setItem("projects", JSON.stringify(projects));
+    localStorage.setItem("projects", JSON.stringify(projects));
   }, [projects]);
 
   // contacts state
@@ -169,7 +187,7 @@ export default function ProfileSections({ isOwner }) {
   const [contactsEditing, setContactsEditing] = useState(false);
 
   useEffect(() => {
-    return localStorage.setItem("contacts", JSON.stringify(contacts));
+    localStorage.setItem("contacts", JSON.stringify(contacts));
   }, [contacts]);
 
   // Feedback state
@@ -200,7 +218,7 @@ export default function ProfileSections({ isOwner }) {
   const [feedbacksEditing, setFeedbacksEditing] = useState(false);
 
   useEffect(() => {
-    return localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
+    localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
   }, [feedbacks]);
 
   // Handlers for editing About Me
@@ -562,6 +580,7 @@ export default function ProfileSections({ isOwner }) {
           )}
         </header>
         <SkillsSection
+          variant="techSkills"
           skillSet={skillSet}
           setSkillSet={setSkillSet}
           skillsEditing={skillsEditing}
@@ -598,6 +617,38 @@ export default function ProfileSections({ isOwner }) {
           projects={projects}
           setProjects={setProjects}
           projectsEditing={projectsEditing}
+        />
+      </section>
+
+      {/* Soft Skills section */}
+      <section className={styles.skillSection} id="softSkills">
+        <header className={styles.header}>
+          <h2>
+            <span className={styles.title}>Soft Skills</span>
+            {isOwner && (
+              <button
+                className={styles.editBtn}
+                onClick={() => setSoftSkillsEditing(!softSkillsEditing)}
+                aria-label={
+                  softSkillsEditing ? "Stop editing Soft Skills" : "Edit Soft Skills"
+                }
+                title={softSkillsEditing ? "Stop editing Soft Skills" : "Edit Soft Skills"}
+              >
+                <Image src={editIcon} alt="Edit icon" />
+              </button>
+            )}
+          </h2>
+          {softSkillsEditing && (
+            <Button variant="regular" onclick={() => setSoftSkillsEditing(false)}>
+              cancel
+            </Button>
+          )}
+        </header>
+        <SkillsSection
+          variant="softSkills"
+          skillSet={softSkills}
+          setSkillSet={setSoftSkills}
+          skillsEditing={softSkillsEditing}
         />
       </section>
 

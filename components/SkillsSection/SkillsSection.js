@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 import Button from "../Button/Button";
 import styles from "./skillsSection.module.css";
 
-function SkillsSection({ skillSet, setSkillSet, skillsEditing }) {
+function SkillsSection({ variant, skillSet, setSkillSet, skillsEditing }) {
   const [skillName, setSkillName] = useState("");
   const [skillRange, setSkillRange] = useState(1);
 
@@ -30,7 +30,7 @@ function SkillsSection({ skillSet, setSkillSet, skillsEditing }) {
           height: "20rem",
           opacity: skillsEditing ? 1 : 0,
           maxHeight: skillsEditing ? "20rem" : 0,
-          transition: "all 0.3s ease"
+          transition: "all 0.3s ease",
         }}
       >
         <Box>
@@ -63,52 +63,72 @@ function SkillsSection({ skillSet, setSkillSet, skillsEditing }) {
           Add Skill
         </Button>
       </Box>
-      <BarChart
-        layout="horizontal"
-        height={300}
-        yAxis={[
-          {
-            scaleType: "band",
-            data: skills,
-            tickSize: 0, // remove the tick lines
-            tickPadding: 8, // space between text and axis
-            label: "", // remove axis label
-          },
-        ]}
-        series={[
-          {
-            data: values,
-            color: "#26c17e",
-            // barLabelFormatter: ({ index }) => skills[index], // remove bar label
-          },
-        ]}
-        xAxis={[
-          {
-            min: 0,
-            max: 10,
-            tickValues: [0, 2, 8, 10],
-            valueFormatter: (value) => {
-              const labels = {
-                0: "Beginner",
-                2: "Proficient",
-                8: "Expert",
-                10: "Master",
-              };
-              return labels[value] || "";
+      {variant === "techSkills" ? (
+        <BarChart
+          layout="horizontal"
+          height={300}
+          yAxis={[
+            {
+              scaleType: "band",
+              data: skills,
+              tickSize: 0, // remove the tick lines
+              tickPadding: 8, // space between text and axis
+              label: "", // remove axis label
             },
-          },
-        ]}
-        sx={{
-          // Hide Y axis lines
-          ".MuiChartsAxis-left .MuiChartsAxis-line": { display: "none" },
-          ".MuiChartsAxis-left .MuiChartsAxis-tick": { display: "none" },
-          ".MuiChartsAxis-left .MuiChartsAxis-tickLabel": {
-            fill: "#000", // make Y axis labels visible
-            fontWeight: "bold",
-          },
-          mt: skillsEditing ? "4rem" : ""
-        }}
-      />
+          ]}
+          series={[
+            {
+              data: values,
+              color: "#26c17e",
+              // barLabelFormatter: ({ index }) => skills[index], // remove bar label
+            },
+          ]}
+          xAxis={[
+            {
+              min: 0,
+              max: 10,
+              tickValues: [0, 2, 8, 10],
+              valueFormatter: (value) => {
+                const labels = {
+                  0: "Beginner",
+                  2: "Proficient",
+                  8: "Expert",
+                  10: "Master",
+                };
+                return labels[value] || "";
+              },
+            },
+          ]}
+          sx={{
+            // Hide Y axis lines
+            ".MuiChartsAxis-left .MuiChartsAxis-line": { display: "none" },
+            ".MuiChartsAxis-left .MuiChartsAxis-tick": { display: "none" },
+            ".MuiChartsAxis-left .MuiChartsAxis-tickLabel": {
+              fill: "#000", // make Y axis labels visible
+              fontWeight: "bold",
+            },
+            mt: skillsEditing ? "4rem" : "",
+          }}
+        />
+      ) : (
+        <BarChart
+          xAxis={[{ data: skills }]}
+          yAxis={[
+            {
+              data: skills,
+            }
+          ]}
+          series={[
+            { data: values,
+              color: "#26c17e"
+             },
+          ]}
+          height={300}
+          sx={{
+            mt: skillsEditing ? "5rem" : "",
+          }}
+        />
+      )}
     </>
   );
 }
