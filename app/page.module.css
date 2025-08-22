@@ -2,7 +2,9 @@
   position: relative;
   z-index: 999;
   display: flex;
-  background-image: url("../public/homepage/homepage-bg-hero.png");
+  background: url("../public/homepage/homepage-bg-hero.avif");
+ background-repeat: no-repeat;
+ background-size: cover;
   height: 100vh;
   background-position: center;
   justify-content: center;
@@ -11,7 +13,6 @@
 .heroOverlay {
   width: 100%;
   height: 100%;
-  background-color: #000001;
   position: absolute;
   top: 0;
   left: 0;
@@ -24,17 +25,51 @@
   gap: 2rem;
 }
 .devInfo img {
-    border-radius: 50%;
-    width: 22rem;
-    height: 25rem;
+  border-radius: 50%;
+  width: 22rem;
+  height: 25rem;
 }
-.devInfo h1  {
-    color: var(--secondary-button-txt)
+.devInfo h1 {
+  color: var(--secondary-button-txt);
 }
 .devInfo h2 {
-    font-weight: 700;
+  font-weight: 700;
 }
 .devInfo p {
-    width: 80%;
-    text-align: center;
+  width: 80%;
+  text-align: center;
+}
+.devDescription {
+  font-family: monospace;
+  font-size: 1.5rem;
+  color: white;
+  text-align: left;
+  white-space: pre; /* preserve line breaks */
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: lime;
+  margin-left: 2px;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  50% { background: transparent; }
+}
+
+
+.devDescription pre {
+  font-size: 2rem;
+}
+.codePrimary {
+  color: rgb(245, 92, 245);
+}
+.codeSecondary {
+  color: lightskyblue;
+}
+.codeTertiary {
+  color: rgb(0, 153, 255);
 }
