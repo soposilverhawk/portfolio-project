@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css";
-import devImg from "../public/homepage/developer-img.png";
+import devImg from "../public/homepage/developer-img.jpeg";
 import Button from "@/components/Button/Button";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";

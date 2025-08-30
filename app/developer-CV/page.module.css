@@ -8,6 +8,7 @@
 }
 .devInfoWrapper h1 {
   font-size: var(--txt-fs);
+  text-align: center;
 }
 .asideExpanded,
 .asideCollapsed {

@@ -6,9 +6,13 @@ import styles from "./portfolioList.module.css";
 function PortfolioList({ data, variant, isMenuOpen = null }) {
   const formatListItem = (str) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
-  }
+  };
   return (
-    <ul className={variant === "devInfo" ? styles.portfolioList : styles.contactList}>
+    <ul
+      className={
+        variant === "devInfo" ? styles.portfolioList : styles.contactList
+      }
+    >
       {data.map(({ id, desc, icon, alt, link }) => (
         <li
           key={id}
@@ -22,7 +26,16 @@ function PortfolioList({ data, variant, isMenuOpen = null }) {
               : ""
           }
         >
-          <Image src={icon} alt={alt} width={16} style={{ filter: "grayscale(1) brightness(0) invert(1)" }}/>
+          {variant === "devInfo" ? (
+            <Image
+            src={icon}
+            alt={alt}
+            width={16}
+            style={{ filter: "grayscale(1) brightness(0) invert(1)" }}
+          />
+          ) : (
+            <Image src={icon} alt={alt} />
+          )}
           {variant === "devInfo" && isMenuOpen && (
             <a href={`#${desc}`} className={styles.devInfoListLink}>
               {formatListItem(desc)}

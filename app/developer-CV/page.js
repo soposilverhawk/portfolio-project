@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import { navItems } from "@/data/portfolioListsData";
-import devImg from "../../public/homepage/developer-img.png";
+import devImg from "../../public/homepage/developer-img.jpeg";
 import Image from "next/image";
 import PortfolioList from "@/components/PortfolioLists/PortfolioList";
 import GoBackButton from "../../components/Button/Button";
@@ -42,7 +42,7 @@ function page() {
             }
           >
             <Image src={devImg} alt="placeholder alt" />
-            {isMenuOpen && <h1>John Doe</h1>}
+            {isMenuOpen && <h1>Sopo Bichinashvili</h1>}
           </div>
           <PortfolioList
             data={navItems}
