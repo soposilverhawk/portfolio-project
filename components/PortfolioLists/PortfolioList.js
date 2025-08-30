@@ -22,7 +22,7 @@ function PortfolioList({ data, variant, isMenuOpen = null }) {
               : ""
           }
         >
-          <Image src={icon} alt={alt} />
+          <Image src={icon} alt={alt} width={16} style={{ filter: "grayscale(1) brightness(0) invert(1)" }}/>
           {variant === "devInfo" && isMenuOpen && (
             <a href={`#${desc}`} className={styles.devInfoListLink}>
               {formatListItem(desc)}

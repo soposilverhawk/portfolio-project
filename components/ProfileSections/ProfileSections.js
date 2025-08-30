@@ -573,10 +573,10 @@ export default function ProfileSections({ isOwner }) {
       </section>
 
       {/* Skills section */}
-      <section className={styles.skillSection} id="skills">
+      <section className={styles.skillSection} id="tech skills">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>Skills</span>
+            <span className={styles.title}>Tech Skills</span>
             {isOwner && (
               <button
                 className={styles.editBtn}
@@ -638,7 +638,7 @@ export default function ProfileSections({ isOwner }) {
       </section>
 
       {/* Soft Skills section */}
-      <section className={styles.skillSection} id="softSkills">
+      <section className={styles.skillSection} id="soft skills">
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>Soft Skills</span>

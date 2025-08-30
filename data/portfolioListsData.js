@@ -7,7 +7,8 @@ import experienceIcon from "../public/portfolioPage/navIcons/experience-icon.png
 import feedbacksIcon from "../public/portfolioPage/navIcons/feedbacks-icon.png";
 import skillsIcon from "../public/portfolioPage/navIcons/skills-icon.png";
 import portfolioIcon from "../public/portfolioPage/navIcons/suitcase-icon.png";
-
+import softSkillsIcon from "../public/portfolioPage/navIcons/softSkills-icon.png";
+import languagesIcon from "../public/portfolioPage/navIcons/languages-icon.png";
 
 export const navItems = [
   {
@@ -30,7 +31,7 @@ export const navItems = [
   },
   {
     id: uuidv4(),
-    desc: "skills",
+    desc: "tech skills",
     icon: skillsIcon,
     alt: "diamond icon",
   },
@@ -39,6 +40,18 @@ export const navItems = [
     desc: "portfolio",
     icon: portfolioIcon,
     alt: "suitcase icon",
+  },
+  {
+    id: uuidv4(),
+    desc: "soft skills",
+    icon: softSkillsIcon,
+    alt: "silhouette of a man thinking",
+  },
+  {
+    id: uuidv4(),
+    desc: "languages",
+    icon: languagesIcon,
+    alt: "language textbox",
   },
   {
     id: uuidv4(),
