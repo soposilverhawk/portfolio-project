@@ -55,7 +55,7 @@ function SkillsSection({ variant, skillSet, setSkillSet, skillsEditing }) {
             min="1"
             name="range"
             value={skillRange}
-            onChange={(e) => setSkillRange(e.target.value)}
+            onChange={(e) => setSkillRange(Number(e.target.value))}
             className={styles.input}
           />
         </Box>
@@ -63,7 +63,7 @@ function SkillsSection({ variant, skillSet, setSkillSet, skillsEditing }) {
           Add Skill
         </Button>
       </Box>
-      {variant === "techSkills" ? (
+      {variant === "horizontal" ? (
         <BarChart
           layout="horizontal"
           height={300}

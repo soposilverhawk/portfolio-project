@@ -121,6 +121,23 @@ export default function ProfileSections({ isOwner }) {
     localStorage.setItem("soft skills", JSON.stringify(softSkills));
   }, [softSkills]);
 
+  // languages state:
+
+  const [languages, setLanguages] = useState(() => {
+    return (
+      JSON.parse(localStorage.getItem("languages")) || [
+        { skill: "Georgian", value: 10 },
+        { skill: "English", value: 9 },
+        { skill: "Russian", value: 9 },
+      ]
+    );
+  });
+  const [languagesEditing, setLanguageEditing] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("languages", JSON.stringify(languages));
+  }, [languages]);
+
   // Portfolio state
   const [projects, setProjects] = useState(() => {
     return (
@@ -580,7 +597,7 @@ export default function ProfileSections({ isOwner }) {
           )}
         </header>
         <SkillsSection
-          variant="techSkills"
+          variant="horizontal"
           skillSet={skillSet}
           setSkillSet={setSkillSet}
           skillsEditing={skillsEditing}
@@ -630,22 +647,31 @@ export default function ProfileSections({ isOwner }) {
                 className={styles.editBtn}
                 onClick={() => setSoftSkillsEditing(!softSkillsEditing)}
                 aria-label={
-                  softSkillsEditing ? "Stop editing Soft Skills" : "Edit Soft Skills"
+                  softSkillsEditing
+                    ? "Stop editing Soft Skills"
+                    : "Edit Soft Skills"
                 }
-                title={softSkillsEditing ? "Stop editing Soft Skills" : "Edit Soft Skills"}
+                title={
+                  softSkillsEditing
+                    ? "Stop editing Soft Skills"
+                    : "Edit Soft Skills"
+                }
               >
                 <Image src={editIcon} alt="Edit icon" />
               </button>
             )}
           </h2>
           {softSkillsEditing && (
-            <Button variant="regular" onclick={() => setSoftSkillsEditing(false)}>
+            <Button
+              variant="regular"
+              onclick={() => setSoftSkillsEditing(false)}
+            >
               cancel
             </Button>
           )}
         </header>
         <SkillsSection
-          variant="softSkills"
+          variant="vertical"
           skillSet={softSkills}
           setSkillSet={setSoftSkills}
           skillsEditing={softSkillsEditing}
@@ -706,6 +732,47 @@ export default function ProfileSections({ isOwner }) {
         ) : (
           <PortfolioList data={contacts} variant="contactList" />
         )}
+      </section>
+
+      {/* languages section */}
+      <section className={styles.skillSection} id="languages">
+        <header className={styles.header}>
+          <h2>
+            <span className={styles.title}>Languages</span>
+            {isOwner && (
+              <button
+                className={styles.editBtn}
+                onClick={() => setLanguageEditing(!languagesEditing)}
+                aria-label={
+                  languagesEditing
+                    ? "Stop editing languages"
+                    : "Edit languages"
+                }
+                title={
+                  languagesEditing
+                    ? "Stop editing languages"
+                    : "Edit languages"
+                }
+              >
+                <Image src={editIcon} alt="Edit icon" />
+              </button>
+            )}
+          </h2>
+          {languagesEditing && (
+            <Button
+              variant="regular"
+              onclick={() => setSoftSkillsEditing(false)}
+            >
+              cancel
+            </Button>
+          )}
+        </header>
+        <SkillsSection
+          variant="horizontal"
+          skillSet={languages}
+          setSkillSet={setLanguages}
+          skillsEditing={languagesEditing}
+        />
       </section>
 
       {/* Feedbacks section */}
