@@ -678,6 +678,47 @@ export default function ProfileSections({ isOwner }) {
         />
       </section>
 
+       {/* languages section */}
+      <section className={styles.skillSection} id="languages">
+        <header className={styles.header}>
+          <h2>
+            <span className={styles.title}>Languages</span>
+            {isOwner && (
+              <button
+                className={styles.editBtn}
+                onClick={() => setLanguageEditing(!languagesEditing)}
+                aria-label={
+                  languagesEditing
+                    ? "Stop editing languages"
+                    : "Edit languages"
+                }
+                title={
+                  languagesEditing
+                    ? "Stop editing languages"
+                    : "Edit languages"
+                }
+              >
+                <Image src={editIcon} alt="Edit icon" />
+              </button>
+            )}
+          </h2>
+          {languagesEditing && (
+            <Button
+              variant="regular"
+              onclick={() => setSoftSkillsEditing(false)}
+            >
+              cancel
+            </Button>
+          )}
+        </header>
+        <SkillsSection
+          variant="horizontal"
+          skillSet={languages}
+          setSkillSet={setLanguages}
+          skillsEditing={languagesEditing}
+        />
+      </section>
+
       {/* Contacts section */}
       <section className={styles.section} id="contacts">
         <header className={styles.header}>
@@ -732,47 +773,6 @@ export default function ProfileSections({ isOwner }) {
         ) : (
           <PortfolioList data={contacts} variant="contactList" />
         )}
-      </section>
-
-      {/* languages section */}
-      <section className={styles.skillSection} id="languages">
-        <header className={styles.header}>
-          <h2>
-            <span className={styles.title}>Languages</span>
-            {isOwner && (
-              <button
-                className={styles.editBtn}
-                onClick={() => setLanguageEditing(!languagesEditing)}
-                aria-label={
-                  languagesEditing
-                    ? "Stop editing languages"
-                    : "Edit languages"
-                }
-                title={
-                  languagesEditing
-                    ? "Stop editing languages"
-                    : "Edit languages"
-                }
-              >
-                <Image src={editIcon} alt="Edit icon" />
-              </button>
-            )}
-          </h2>
-          {languagesEditing && (
-            <Button
-              variant="regular"
-              onclick={() => setSoftSkillsEditing(false)}
-            >
-              cancel
-            </Button>
-          )}
-        </header>
-        <SkillsSection
-          variant="horizontal"
-          skillSet={languages}
-          setSkillSet={setLanguages}
-          skillsEditing={languagesEditing}
-        />
       </section>
 
       {/* Feedbacks section */}
