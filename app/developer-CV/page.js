@@ -9,7 +9,7 @@ import GoBackButton from "../../components/Button/Button";
 import { useRouter } from "next/navigation";
 import ProfileSections from "@/components/ProfileSections/ProfileSections";
 
-function page() {
+function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [isOwner, setIsOwner] = useState(false);
   const [checkedPassword, setCheckedPassword] = useState(false);
@@ -77,4 +77,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

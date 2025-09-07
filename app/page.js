@@ -9,38 +9,36 @@ import { useState, useEffect } from "react";
 export default function Home() {
   const router = useRouter();
   const handleNavigate = () => router.push("/developer-CV");
-
-  // Break the code into styled tokens
-  const codeTokens = [
-    { text: "let ", className: styles.codeTertiary },
-    { text: "unemployedDev = ", className: styles.codeSecondary },
-    { text: "true", className: styles.codeTertiary },
-    { text: ";\n", className: styles.codeSemiColon },
-    { text: "let ", className: styles.codeTertiary },
-    { text: "lookForJob", className: styles.codeSecondary },
-    { text: ";\n", className: styles.codeSemiColon },
-    { text: "let ", className: styles.codeTertiary },
-    { text: "pushToLimits", className: styles.codeSecondary },
-    { text: ";\n", className: styles.codeSemiColon },
-    { text: "\nif (", className: styles.codePrimary },
-    { text: "unemployedDev", className: styles.codeSecondary },
-    { text: ") {", className: styles.codePrimary },
-    { text: "\n  lookForJob = ", className: styles.codeSecondary },
-    { text: "true", className: styles.codeTertiary },
-    { text: ";\n", className: styles.codeSemiColon },
-    { text: "}", className: styles.codePrimary },
-    { text: " else {", className: styles.codePrimary },
-    { text: "\n  pushToLimits = ", className: styles.codeSecondary },
-    { text: "true", className: styles.codeTertiary },
-    { text: ";\n", className: styles.codeSemiColon },
-    { text: "}", className: styles.codePrimary },
-  ];
-
   const [displayed, setDisplayed] = useState([]);
   const [tokenIndex, setTokenIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
 
   useEffect(() => {
+    // Break the code into styled tokens
+    const codeTokens = [
+      { text: "let ", className: styles.codeTertiary },
+      { text: "unemployedDev = ", className: styles.codeSecondary },
+      { text: "true", className: styles.codeTertiary },
+      { text: ";\n", className: styles.codeSemiColon },
+      { text: "let ", className: styles.codeTertiary },
+      { text: "lookForJob", className: styles.codeSecondary },
+      { text: ";\n", className: styles.codeSemiColon },
+      { text: "let ", className: styles.codeTertiary },
+      { text: "pushToLimits", className: styles.codeSecondary },
+      { text: ";\n", className: styles.codeSemiColon },
+      { text: "\nif (", className: styles.codePrimary },
+      { text: "unemployedDev", className: styles.codeSecondary },
+      { text: ") {", className: styles.codePrimary },
+      { text: "\n  lookForJob = ", className: styles.codeSecondary },
+      { text: "true", className: styles.codeTertiary },
+      { text: ";\n", className: styles.codeSemiColon },
+      { text: "}", className: styles.codePrimary },
+      { text: " else {", className: styles.codePrimary },
+      { text: "\n  pushToLimits = ", className: styles.codeSecondary },
+      { text: "true", className: styles.codeTertiary },
+      { text: ";\n", className: styles.codeSemiColon },
+      { text: "}", className: styles.codePrimary },
+    ];
     if (tokenIndex < codeTokens.length) {
       const { text, className } = codeTokens[tokenIndex];
       if (charIndex < text.length) {
