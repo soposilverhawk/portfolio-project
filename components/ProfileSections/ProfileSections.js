@@ -14,6 +14,7 @@ import feedbackAuthorPlaceholder from "../../public/portfolioPage/feedbackProvid
 import htmlGrouProject from "../../public/portfolioPage/cards/html-group-project.jpeg";
 import reactGroupProject from "../../public/portfolioPage/cards/react-group-project.jpeg";
 import btuAISoloProject from "../../public/portfolioPage/cards/btu-ai-solo-project.jpeg";
+import redberryProject from "../../public/portfolioPage/cards/redberry-project.jpg";
 
 export default function ProfileSections({ isOwner }) {
   // About me text state
@@ -166,6 +167,13 @@ export default function ProfileSections({ isOwner }) {
           description:
             "Solo React SPA with fully functional navigation, mockup chat with support, facilitating university's location, contact information, contact forms and subroutes.",
         },
+        {
+          name: "redseam-clothing (Redberry internship project)",
+          id: uuidv4(),
+          img: redberryProject,
+          ghLink: "https://soposilverhawk.github.io/redseam-clothing/",
+          description: "An E-commerce website where customers can preview products without an account. Register/login and with an active account - choose different items, add them to the cart, remove items, increment/decrement quantities, review the cart contents and place orders"
+        }
       ]
     );
   });

@@ -60,7 +60,7 @@ export default function Home() {
         setCharIndex(0);
       }
     }
-  }, [charIndex, tokenIndex, codeTokens]);
+  }, [charIndex, tokenIndex]);
 
   return (
     <div className={styles.wrapper}>
