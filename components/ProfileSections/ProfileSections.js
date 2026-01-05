@@ -163,7 +163,7 @@ export default function ProfileSections({ isOwner }) {
           name: "Women in AI - React module solo project",
           id: uuidv4(),
           img: btuAISoloProject,
-          ghLink: "https://soposilverhawk.github.io/BTU-AI/",
+          ghLink: "https://github.com/soposilverhawk/BTU-AI",
           description:
             "Solo React SPA with fully functional navigation, mockup chat with support, facilitating university's location, contact information, contact forms and subroutes.",
         },
@@ -171,8 +171,8 @@ export default function ProfileSections({ isOwner }) {
           name: "redseam-clothing (Redberry internship project)",
           id: uuidv4(),
           img: redberryProject,
-          ghLink: "https://soposilverhawk.github.io/redseam-clothing/",
-          description: "An E-commerce website where customers can preview products without an account. Register/login and with an active account - choose different items, add them to the cart, remove items, increment/decrement quantities, review the cart contents and place orders"
+          ghLink: "https://github.com/soposilverhawk/redseam-clothing",
+          description: "An E-commerce website where customers can preview products without an account. Register/login and with an active account - choose different items, add them to the cart, remove, increment/decrement quantities, review the cart contents and place purchase"
         }
       ]
     );
