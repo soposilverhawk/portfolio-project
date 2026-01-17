@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { BarChart } from "@mui/x-charts/BarChart";
 import { Box } from "@mui/material";
@@ -116,13 +117,9 @@ function SkillsSection({ variant, skillSet, setSkillSet, skillsEditing }) {
           yAxis={[
             {
               data: skills,
-            }
+            },
           ]}
-          series={[
-            { data: values,
-              color: "#26c17e"
-             },
-          ]}
+          series={[{ data: values, color: "#26c17e" }]}
           height={300}
           sx={{
             mt: skillsEditing ? "5rem" : "",

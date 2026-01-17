@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import styles from "./ProfileSections.module.css";
 import Image from "next/image";
@@ -172,8 +173,9 @@ export default function ProfileSections({ isOwner }) {
           id: uuidv4(),
           img: redberryProject,
           ghLink: "https://github.com/soposilverhawk/redseam-clothing",
-          description: "An E-commerce website where customers can preview products without an account. Register/login and with an active account - choose different items, add them to the cart, remove, increment/decrement quantities, review the cart contents and place purchase"
-        }
+          description:
+            "An E-commerce website where customers can preview products without an account. Register/login and with an active account - choose different items, add them to the cart, remove, increment/decrement quantities, review the cart contents and place purchase",
+        },
       ]
     );
   });
@@ -303,14 +305,14 @@ export default function ProfileSections({ isOwner }) {
   // handlers for feedbacks
   const handleChange = (id, field, value) => {
     setFeedbacks((prev) =>
-      prev.map((fb) => (fb.id === id ? { ...fb, [field]: value } : fb))
+      prev.map((fb) => (fb.id === id ? { ...fb, [field]: value } : fb)),
     );
   };
 
   const handleImageUpload = (id, file) => {
     const imgUrl = URL.createObjectURL(file);
     setFeedbacks((prev) =>
-      prev.map((fb) => (fb.id === id ? { ...fb, authorImg: imgUrl } : fb))
+      prev.map((fb) => (fb.id === id ? { ...fb, authorImg: imgUrl } : fb)),
     );
   };
 
@@ -686,7 +688,7 @@ export default function ProfileSections({ isOwner }) {
         />
       </section>
 
-       {/* languages section */}
+      {/* languages section */}
       <section className={styles.skillSection} id="languages">
         <header className={styles.header}>
           <h2>
@@ -696,14 +698,10 @@ export default function ProfileSections({ isOwner }) {
                 className={styles.editBtn}
                 onClick={() => setLanguageEditing(!languagesEditing)}
                 aria-label={
-                  languagesEditing
-                    ? "Stop editing languages"
-                    : "Edit languages"
+                  languagesEditing ? "Stop editing languages" : "Edit languages"
                 }
                 title={
-                  languagesEditing
-                    ? "Stop editing languages"
-                    : "Edit languages"
+                  languagesEditing ? "Stop editing languages" : "Edit languages"
                 }
               >
                 <Image src={editIcon} alt="Edit icon" />
@@ -869,7 +867,7 @@ export default function ProfileSections({ isOwner }) {
                     />
                   )}
                 </div>
-              )
+              ),
             )}
             <button className={styles.addBtn} onClick={addFeedback}>
               + Add Feedback
@@ -911,7 +909,7 @@ export default function ProfileSections({ isOwner }) {
                     </span>
                   </div>
                 </div>
-              )
+              ),
             )}
           </div>
         )}
