@@ -23,6 +23,12 @@ export default function ProfileSections({ isOwner }) {
   const [aboutEditing, setAboutEditing] = useState(false);
 
   useEffect(() => {
+    const stored = localStorage.getItem("aboutText");
+    if (stored) {
+      setAboutText(stored)
+    }
+  }, [])
+  useEffect(() => {
     localStorage.setItem("aboutText", aboutText);
   }, [aboutText]);
 
