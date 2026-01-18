@@ -18,13 +18,6 @@ import btuAISoloProject from "../../public/portfolioPage/cards/btu-ai-solo-proje
 import redberryProject from "../../public/portfolioPage/cards/redberry-project.jpg";
 
 export default function ProfileSections({ isOwner }) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
   // About me text state
   const [aboutText, setAboutText] = useState(() => {
     return localStorage.getItem(
