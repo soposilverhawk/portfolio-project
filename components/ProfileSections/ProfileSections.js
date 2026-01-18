@@ -27,13 +27,12 @@ export default function ProfileSections({ isOwner }) {
   if (!mounted) return null;
   // About me text state
   const [aboutText, setAboutText] = useState(() => {
-    return (
-      localStorage.getItem("aboutText") ||
-      "I'm a 23 years old aspiring front-end developer with a passion for creating intuitive and engaging web experiences. I started my journey through self-study. My dedication led me to a UN and BTU sponsored web-development program, where I successfully completed the front-end track (HTML, CSS, JS, REACT, NEXT.JS). Currently I'm looking to get hands on experience and mentorship through real-life projects and hopefully bring value to the company as I further progress in the field."
+    return localStorage.getItem(
+      "aboutText" ||
+        "I'm a 23 years old aspiring front-end developer with a passion for creating intuitive and engaging web experiences. I started my journey through self-study. My dedication led me to a UN and BTU sponsored web-development program, where I successfully completed the front-end track (HTML, CSS, JS, REACT, NEXT.JS). Currently I'm looking to get hands on experience and mentorship through real-life projects and hopefully bring value to the company as I further progress in the field.",
     );
   });
   const [aboutEditing, setAboutEditing] = useState(false);
-
   useEffect(() => {
     localStorage.setItem("aboutText", aboutText);
   }, [aboutText]);
