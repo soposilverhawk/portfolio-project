@@ -7,23 +7,15 @@ import SkillsSection from "../SkillsSection/SkillsSection";
 import Button from "../Button/Button";
 import { v4 as uuidv4 } from "uuid";
 import PortfolioSection from "../portfolioSection/PortfolioSection";
-import phoneIcon from "../../public/portfolioPage/contactIcons/phone-icon.png";
-import emailIcon from "../../public/portfolioPage/contactIcons/email-icon.png";
-import facebookIcon from "../../public/portfolioPage/contactIcons/facebook-icon.png";
 import PortfolioList from "../PortfolioLists/PortfolioList";
-import feedbackAuthorPlaceholder from "../../public/portfolioPage/feedbackProviders/feedback-provider-1.png";
-import htmlGrouProject from "../../public/portfolioPage/cards/html-group-project.jpeg";
-import reactGroupProject from "../../public/portfolioPage/cards/react-group-project.jpeg";
-import btuAISoloProject from "../../public/portfolioPage/cards/btu-ai-solo-project.jpeg";
-import redberryProject from "../../public/portfolioPage/cards/redberry-project.jpg";
 import Box from "@mui/material/Box";
+import developerData from "@/data/developerData";
 
 export default function ProfileSections({ isOwner }) {
   // About me text state
   const [aboutText, setAboutText] = useState(() => {
     return (
-      localStorage.getItem("aboutText") ||
-      "I'm a 23 years old aspiring front-end developer with a passion for creating intuitive and engaging web experiences. I started my journey through self-study. My dedication led me to a UN and BTU sponsored web-development program, where I successfully completed the front-end track (HTML, CSS, JS, REACT, NEXT.JS). Currently I'm looking to get hands on experience and mentorship through real-life projects and hopefully bring value to the company as I further progress in the field."
+      localStorage.getItem("aboutText") || developerData.aboutText
     );
   });
   const [aboutEditing, setAboutEditing] = useState(false);
@@ -34,20 +26,7 @@ export default function ProfileSections({ isOwner }) {
   // Education state
   const [education, setEducation] = useState(() => {
     return (
-      JSON.parse(localStorage.getItem("education")) || [
-        {
-          year: "2025 - current",
-          title: "Women in AI - web development course",
-          description:
-            "Women in AI is part of the women’s economic empowerment component of the UN Women’s project “Good governance for gender equality in Georgia”, which is implemented by BTU with the support of the Norwegian government. Project aims to empower and upskill 200 women in Georgia by providing them with comprehensive education and hands-on experience in the fields of Artificial Intelligence (AI) and Web Development.",
-        },
-        {
-          year: "2019 - 2023",
-          title: "Bachelor of Humanities - History",
-          description:
-            "The Bachelor of Humanities in History Education is an undergraduate program focused on providing students with a deep understanding of historical events, societies, and cultures, combined with the skills to effectively teach this knowledge. Students explore diverse historical periods, critical thinking, research methodologies, and educational theories, preparing them to foster historical literacy and analytical skills in learners. Graduates are equipped for careers in teaching, education, cultural institutions, or further studies in history and humanities.",
-        },
-      ]
+      JSON.parse(localStorage.getItem("education")) || developerData.education
     );
   });
   const [educationEditing, setEducationEditing] = useState(false);
@@ -59,22 +38,7 @@ export default function ProfileSections({ isOwner }) {
   // Experience state
   const [experience, setExperience] = useState(() => {
     return (
-      JSON.parse(localStorage.getItem("experience")) || [
-        {
-          company: "Majorel (TP)",
-          dates: "2025 - current",
-          role: "Customer Trust and Safety Expert",
-          description:
-            "Ensuring safety of customers across the world on a popular social media platform. Responsibilities include: Filtering and restricting/removing heavy or violative content. Staying up to date with fast-paced changing market and trends through self-studies, communicating with coaches to ensure no ambiguous edge cases are left out.",
-        },
-        {
-          company: "Blazing Boost SRL",
-          dates: "2021 - 2023",
-          role: "Customer Service Representative",
-          description:
-            "Customer Service Representative for an e-commerce website in a video gaming industry. Responsibilities included: Active communication with both customers and service providers via written-communication platforms (discord, email), handling service completions, handling problematic services/customers, managing customer databases.",
-        },
-      ]
+      JSON.parse(localStorage.getItem("experience")) || developerData.experience
     );
   });
   const [experienceEditing, setExperienceEditing] = useState(false);
@@ -83,38 +47,23 @@ export default function ProfileSections({ isOwner }) {
     localStorage.setItem("experience", JSON.stringify(experience));
   }, [experience]);
 
-  // Skills state
-  const [skillSet, setSkillSet] = useState(() => {
+  // Tech Skills state
+  const [techSkills, setTechSkills] = useState(() => {
     return (
-      JSON.parse(localStorage.getItem("skillSet")) || [
-        { skill: "HTML", value: 10 },
-        { skill: "CSS", value: 7.5 },
-        { skill: "SCSS/SASS", value: 6.5 },
-        { skill: "Bootstrap", value: 5 },
-        { skill: "Javascript", value: 8 },
-        { skill: "React", value: 6.5 },
-        { skill: "clickUp", value: 6 },
-        { skill: "Git", value: 7 },
-      ]
+      JSON.parse(localStorage.getItem("skillSet")) || developerData.skillSet.technical
     );
   });
   const [skillsEditing, setSkillsEditing] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem("skillSet", JSON.stringify(skillSet));
-  }, [skillSet]);
+    localStorage.setItem("techSkills", JSON.stringify(techSkills));
+  }, [techSkills]);
 
   // Soft Skills state
 
   const [softSkills, setSoftSkills] = useState(() => {
     return (
-      JSON.parse(localStorage.getItem("soft skills")) || [
-        { skill: "Communication", value: 9 },
-        { skill: "Teamwork", value: 8 },
-        { skill: "Time management", value: 7 },
-        { skill: "Adaptability", value: 8 },
-        { skill: "Problem-solving", value: 7 },
-      ]
+      JSON.parse(localStorage.getItem("soft skills")) || developerData.skillSet.soft
     );
   });
   const [softSkillsEditing, setSoftSkillsEditing] = useState(false);
@@ -127,11 +76,7 @@ export default function ProfileSections({ isOwner }) {
 
   const [languages, setLanguages] = useState(() => {
     return (
-      JSON.parse(localStorage.getItem("languages")) || [
-        { skill: "Georgian", value: 10 },
-        { skill: "English", value: 9 },
-        { skill: "Russian", value: 9 },
-      ]
+      JSON.parse(localStorage.getItem("languages")) || developerData.languages
     );
   });
   const [languagesEditing, setLanguageEditing] = useState(false);
@@ -143,40 +88,7 @@ export default function ProfileSections({ isOwner }) {
   // Portfolio state
   const [projects, setProjects] = useState(() => {
     return (
-      JSON.parse(localStorage.getItem("projects")) || [
-        {
-          name: "Women in AI - HTML/CSS group project",
-          id: uuidv4(),
-          img: htmlGrouProject,
-          ghLink: "https://github.com/soposilverhawk/Women-in-AI-group-project",
-          description:
-            "A simple single page group project made with HTML, CSS preprocessors SCSS/SASS and vanilla Javascript. My main responsibility here was project management via clickUp and Github as a more experienced developer in the team.",
-        },
-        {
-          name: "Women in AI - React group project",
-          id: uuidv4(),
-          img: reactGroupProject,
-          ghLink: "https://github.com/Miranda-K12/Desingo",
-          description:
-            "A group project of react SPA with fully functional navigation. My part in the group project were static components (footer, header and call to action banner with their respective functionalities).",
-        },
-        {
-          name: "Women in AI - React module solo project",
-          id: uuidv4(),
-          img: btuAISoloProject,
-          ghLink: "https://github.com/soposilverhawk/BTU-AI",
-          description:
-            "Solo React SPA with fully functional navigation, mockup chat with support, facilitating university's location, contact information, contact forms and subroutes.",
-        },
-        {
-          name: "redseam-clothing (Redberry internship project)",
-          id: uuidv4(),
-          img: redberryProject,
-          ghLink: "https://github.com/soposilverhawk/redseam-clothing",
-          description:
-            "An E-commerce website where customers can preview products without an account. Register/login and with an active account - choose different items, add them to the cart, remove, increment/decrement quantities, review the cart contents and place purchase",
-        },
-      ]
+      JSON.parse(localStorage.getItem("projects")) || developerData.projects
     );
   });
   const [projectsEditing, setProjectsEditing] = useState(false);
@@ -188,27 +100,7 @@ export default function ProfileSections({ isOwner }) {
   // contacts state
   const [contacts, setContacts] = useState(() => {
     return (
-      JSON.parse(localStorage.getItem("contacts")) || [
-        {
-          id: uuidv4(),
-          desc: "555 01 05 37",
-          icon: phoneIcon,
-          alt: "telephone icon",
-        },
-        {
-          id: uuidv4(),
-          desc: "darkness24lol@gmail.com",
-          icon: emailIcon,
-          alt: "email icon",
-        },
-        {
-          id: uuidv4(),
-          desc: "Facebook",
-          icon: facebookIcon,
-          link: "https://www.facebook.com/sophia.martell.33/",
-          alt: "Facebook logo",
-        },
-      ]
+      JSON.parse(localStorage.getItem("contacts")) || developerData.contacts
     );
   });
   const [contactsEditing, setContactsEditing] = useState(false);
@@ -220,26 +112,7 @@ export default function ProfileSections({ isOwner }) {
   // Feedback state
   const [feedbacks, setFeedbacks] = useState(() => {
     return (
-      JSON.parse(localStorage.getItem("feedbacks")) || [
-        {
-          id: uuidv4(),
-          feedback:
-            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. ",
-          author: "Martin Friman Programmer",
-          authorImg: feedbackAuthorPlaceholder,
-          authorCompany: "somesite.com",
-          authorCompanyLink: "https://btu.edu.ge/",
-        },
-        {
-          id: uuidv4(),
-          feedback:
-            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. ",
-          author: "Martin Friman Programmer",
-          authorImg: feedbackAuthorPlaceholder,
-          authorCompany: "somesite.com",
-          authorCompanyLink: "https://btu.edu.ge/",
-        },
-      ]
+      JSON.parse(localStorage.getItem("feedbacks")) || developerData.feedbacks
     );
   });
   const [feedbacksEditing, setFeedbacksEditing] = useState(false);
@@ -608,8 +481,8 @@ export default function ProfileSections({ isOwner }) {
         </header>
         <SkillsSection
           variant="horizontal"
-          skillSet={skillSet}
-          setSkillSet={setSkillSet}
+          skillSet={techSkills}
+          setSkillSet={setTechSkills}
           skillsEditing={skillsEditing}
         />
       </section>

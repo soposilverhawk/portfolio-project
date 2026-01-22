@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
-import { navItems } from "@/data/portfolioListsData";
+import { navItems } from "@/data/navigationInformation";
 import devImg from "../../public/homepage/developer-img.jpeg";
 import Image from "next/image";
 import PortfolioList from "@/components/PortfolioLists/PortfolioList";
