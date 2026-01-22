@@ -120,7 +120,16 @@ function PortfolioSection({ projects, setProjects, projectsEditing }) {
           <span> / Code / </span>
           <span className={styles.highlightTxt}>UI</span>
         </h3>
-        <Box className={styles.cardsWrapper}>
+        <Box sx={{justifyContent: {
+          xl: "space-between",
+          lg: "center",
+          md: "center",
+          sm: "space-between",
+          xs: "space-between"
+        }, mt: {
+          lg: "5rem",
+          md: "5rem"
+        }}} className={styles.cardsWrapper} >
           {projects.map(({ name, img, id, ghLink, description }) => (
             <a href={ghLink} key={id} target="_blank">
               <div className={styles.cardInner}>
