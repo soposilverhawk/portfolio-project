@@ -20,8 +20,6 @@ function Page() {
     setMounted(true)
   }, [])
 
-  if (!mounted) return null;
-  
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
@@ -34,7 +32,7 @@ function Page() {
     setCheckedPassword(true);
   }, [])
 
-  if (!checkedPassword) return null;
+  if (!mounted || !checkedPassword) return null;
 
   return (
     <div className={styles.container}>
