@@ -120,7 +120,7 @@ function PortfolioSection({ projects, setProjects, projectsEditing }) {
           <span> / Code / </span>
           <span className={styles.highlightTxt}>UI</span>
         </h3>
-        <div className={styles.cardsWrapper}>
+        <Box className={styles.cardsWrapper}>
           {projects.map(({ name, img, id, ghLink, description }) => (
             <a href={ghLink} key={id} target="_blank">
               <div className={styles.cardInner}>
@@ -143,7 +143,7 @@ function PortfolioSection({ projects, setProjects, projectsEditing }) {
               </div>
             </a>
           ))}
-        </div>
+        </Box>
       </div>
     </>
   );
