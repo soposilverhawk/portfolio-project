@@ -711,7 +711,7 @@ export default function ProfileSections({ isOwner }) {
           {languagesEditing && (
             <Button
               variant="regular"
-              onclick={() => setSoftSkillsEditing(false)}
+              onclick={() => setLanguageEditing(false)}
             >
               cancel
             </Button>
