@@ -785,7 +785,8 @@ export default function ProfileSections({ isOwner }) {
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>Feedbacks</span>
-            <button
+            {isOwner && (
+              <button
               className={styles.editBtn}
               onClick={() => setFeedbacksEditing(!feedbacksEditing)}
               aria-label={
@@ -797,6 +798,7 @@ export default function ProfileSections({ isOwner }) {
             >
               <Image src={editIcon} alt="Edit icon" />
             </button>
+            )}
           </h2>
         </header>
 
