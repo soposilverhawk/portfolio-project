@@ -16,6 +16,7 @@ import htmlGrouProject from "../../public/portfolioPage/cards/html-group-project
 import reactGroupProject from "../../public/portfolioPage/cards/react-group-project.jpeg";
 import btuAISoloProject from "../../public/portfolioPage/cards/btu-ai-solo-project.jpeg";
 import redberryProject from "../../public/portfolioPage/cards/redberry-project.jpg";
+import Box from "@mui/material/Box";
 
 export default function ProfileSections({ isOwner }) {
   // About me text state
@@ -372,7 +373,7 @@ export default function ProfileSections({ isOwner }) {
   }
 
   return (
-    <div className={styles.container}>
+    <Box>
       {/* About Me Section */}
       <section className={styles.section} id="about me">
         <header className={styles.header}>
@@ -913,6 +914,6 @@ export default function ProfileSections({ isOwner }) {
           </div>
         )}
       </section>
-    </div>
+    </Box>
   );
 }
