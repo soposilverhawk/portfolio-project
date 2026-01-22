@@ -19,6 +19,7 @@
 .cardsWrapper {
   display: flex;
   row-gap: 10rem;
+  column-gap: 10rem;
   flex-wrap: wrap;
 }
 .cardsWrapper a {
