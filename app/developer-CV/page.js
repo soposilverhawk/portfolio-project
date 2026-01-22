@@ -14,6 +14,14 @@ function Page() {
   const [isOwner, setIsOwner] = useState(false);
   const [checkedPassword, setCheckedPassword] = useState(false);
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null;
+  
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
