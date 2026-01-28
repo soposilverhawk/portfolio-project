@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💼 Personal Portfolio Website
 
-## Getting Started
+## 📋 Table of contents
 
-First, run the development server:
+- [Overview](#overview)
+  - [Links](#links)
+  - [Owner Access Guide](#owner-access-guide)
+- [My process](#my-process)
+  - [Features](#features)
+  - [Tech Stack](#tech-stack)
+  - [What I learned](#what-i-learned)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🔍 Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This project is a personal portfolio website built as a part of "Women in AI" web-development course to showcase my skills, projects and experience as a front-end developer.
+The goal of this project was to practice real-world front-end development patterns, component structure, and UI/UX pronciples while also showcasing my experience as a developer.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 🌐 Links
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Live Site URL: [https://portfolio-project-orpin-nu.vercel.app/]
+- GitHub Repository: [https://github.com/soposilverhawk/portfolio-project]
 
-## Learn More
+### ❗Owner Access Guide
 
-To learn more about Next.js, take a look at the following resources:
+In order to access the Owner editor rights, to edit sections apart from feedbacks, please insert "1" as the password to the prompt that you'll receive upon clicking "Know more" button on the homepage. As the project is NOT inteded for commercial use, I decided to indicate a very simple and plain password for ease of use for potential employers.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## My process
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🧩 Features
 
-## Deploy on Vercel
+- 👤 Profile Sections – Introduction, skills, experience, and personal information.
+- 📍 Navigation - Navigate to different sections of CV.
+- 📂 Projects Showcase – Highlighted projects with descriptions and respective repository links.
+- 🔐 Owner access authorization - Possibility to edit data in place in each section with owner access.
+- ✏️ Editable Content – Unauthorized users are permitted to edit Feedbacks section without owner access.
+- 🧩 Reusable Components – Clean and modular component structure for scalability.
+- 🎨 Modern UI – Clean, minimal design with consistent styling.
+- 📱 Responsive Design – Fully optimized for mobile, tablet, and desktop screens.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🛠️ Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- React/Next.js - Component-based UI and routing.
+- Vite/Next.js App Router - Fast development and build tooling.
+- Material UI (MUI) - For stylish, consistent and responsive UI components.
+- CSS Modules - Scope and maintainable styling.
+- Javascript (ES6+) - Core logic and interactivity.
+- LocalStorage - To store edited CV section data between sessions.
+- Custom Components - Reusable UI components
+
+### 📖 What I learned
+
+I dipped my toes in Next.js with Client side rendering in this project. I learned how navigation works and differs with Next.js compared to React. Apart from that, I learned how to work with environment variables and how to host a Next.js project using Vercel. I think this was a great first experience with Next.js and I plan to further utilize it and enhance my understanding in it.
