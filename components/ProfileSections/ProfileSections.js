@@ -10,17 +10,20 @@ import PortfolioSection from "../portfolioSection/PortfolioSection";
 import PortfolioList from "../PortfolioLists/PortfolioList";
 import Box from "@mui/material/Box";
 import developerData from "@/data/developerData";
+import { useTranslation } from "react-i18next";
 
 export default function ProfileSections({ isOwner }) {
   // About me text state
+  const { i18n } = useTranslation();
+  const lang = i18n.resolvedLanguage;
   const [aboutText, setAboutText] = useState(() => {
     return (
-      localStorage.getItem("aboutText") || developerData.aboutText
+      JSON.parse(localStorage.getItem("aboutText")) || developerData.aboutText
     );
   });
   const [aboutEditing, setAboutEditing] = useState(false);
   useEffect(() => {
-    localStorage.setItem("aboutText", aboutText);
+    localStorage.setItem("aboutText", JSON.stringify(aboutText));
   }, [aboutText]);
 
   // Education state
@@ -50,7 +53,8 @@ export default function ProfileSections({ isOwner }) {
   // Tech Skills state
   const [techSkills, setTechSkills] = useState(() => {
     return (
-      JSON.parse(localStorage.getItem("skillSet")) || developerData.skillSet.technical
+      JSON.parse(localStorage.getItem("skillSet")) ||
+      developerData.skillSet.technical
     );
   });
   const [skillsEditing, setSkillsEditing] = useState(false);
@@ -63,7 +67,8 @@ export default function ProfileSections({ isOwner }) {
 
   const [softSkills, setSoftSkills] = useState(() => {
     return (
-      JSON.parse(localStorage.getItem("soft skills")) || developerData.skillSet.soft
+      JSON.parse(localStorage.getItem("soft skills")) ||
+      developerData.skillSet.soft
     );
   });
   const [softSkillsEditing, setSoftSkillsEditing] = useState(false);
@@ -267,12 +272,14 @@ export default function ProfileSections({ isOwner }) {
         {aboutEditing ? (
           <textarea
             className={styles.textarea}
-            value={aboutText}
-            onChange={(e) => setAboutText(e.target.value)}
+            value={aboutText[lang] || ""}
+            onChange={(e) =>
+              setAboutText((prev) => ({ ...prev, [lang]: e.target.value }))
+            }
             onKeyDown={handleAboutKeyDown}
           />
         ) : (
-          <p className={styles.paragraph}>{aboutText}</p>
+          <p className={styles.paragraph}>{aboutText[lang]}</p>
         )}
       </section>
 
@@ -298,7 +305,7 @@ export default function ProfileSections({ isOwner }) {
           </h2>
         </header>
         <div className={styles.timeline}>
-          {education.map(({ year, title, description }, i) => (
+          {education[lang].map(({ year, title, description }, i) => (
             <div key={i} className={styles.timelineItem}>
               <div className={styles.yearSection}>
                 <div className={styles.year}>
@@ -384,7 +391,7 @@ export default function ProfileSections({ isOwner }) {
             )}
           </h2>
         </header>
-        {experience.map(({ company, dates, role, description }, i) => (
+        {experience[lang].map(({ company, dates, role, description }, i) => (
           <div key={i} className={styles.experienceItem}>
             <div className={styles.expLeft}>
               {experienceEditing ? (
@@ -555,7 +562,7 @@ export default function ProfileSections({ isOwner }) {
         </header>
         <SkillsSection
           variant="vertical"
-          skillSet={softSkills}
+          skillSet={softSkills[lang]}
           setSkillSet={setSoftSkills}
           skillsEditing={softSkillsEditing}
         />
@@ -582,17 +589,14 @@ export default function ProfileSections({ isOwner }) {
             )}
           </h2>
           {languagesEditing && (
-            <Button
-              variant="regular"
-              onclick={() => setLanguageEditing(false)}
-            >
+            <Button variant="regular" onclick={() => setLanguageEditing(false)}>
               cancel
             </Button>
           )}
         </header>
         <SkillsSection
           variant="horizontal"
-          skillSet={languages}
+          skillSet={languages[lang]}
           setSkillSet={setLanguages}
           skillsEditing={languagesEditing}
         />

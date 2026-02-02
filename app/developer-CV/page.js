@@ -8,6 +8,7 @@ import PortfolioList from "@/components/PortfolioLists/PortfolioList";
 import GoBackButton from "../../components/Button/Button";
 import { useRouter } from "next/navigation";
 import ProfileSections from "@/components/ProfileSections/ProfileSections";
+import LanguageSelector from "@/components/languageSelector/LanguageSelector";
 
 function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
@@ -77,6 +78,7 @@ function Page() {
         </GoBackButton>
       </aside>
       <main className={styles.CVSectionsContainer}>
+        <LanguageSelector />
        <ProfileSections isOwner={isOwner}/>
       </main>
     </div>
