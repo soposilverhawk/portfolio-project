@@ -13,9 +13,9 @@ import developerData from "@/data/developerData";
 import { useTranslation } from "react-i18next";
 
 export default function ProfileSections({ isOwner }) {
-  // About me text state
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const lang = i18n.resolvedLanguage;
+  // About me text state
   const [aboutText, setAboutText] = useState(() => {
     return (
       JSON.parse(localStorage.getItem("aboutText")) || developerData.aboutText
@@ -256,7 +256,7 @@ export default function ProfileSections({ isOwner }) {
       <section className={styles.section} id="about me">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>About me</span>
+            <span className={styles.title}>{t("cv_sections.about")}</span>
             {isOwner && (
               <button
                 className={styles.editBtn}
@@ -287,7 +287,7 @@ export default function ProfileSections({ isOwner }) {
       <section className={styles.section} id="education">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>Education</span>
+            <span className={styles.title}>{t("cv_sections.education")}</span>
             {isOwner && (
               <button
                 className={styles.editBtn}
@@ -370,7 +370,7 @@ export default function ProfileSections({ isOwner }) {
       <section className={styles.section} id="experience">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>Experience</span>
+            <span className={styles.title}>{t("cv_sections.experience")}</span>
             {isOwner && (
               <button
                 className={styles.editBtn}
@@ -466,7 +466,7 @@ export default function ProfileSections({ isOwner }) {
       <section className={styles.skillSection} id="tech skills">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>Tech Skills</span>
+            <span className={styles.title}>{t("cv_sections.techSkills")}</span>
             {isOwner && (
               <button
                 className={styles.editBtn}
@@ -498,7 +498,7 @@ export default function ProfileSections({ isOwner }) {
       <section className={styles.portfolioSection} id="portfolio">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>Portfolio</span>
+            <span className={styles.title}>{t("cv_sections.portfolio.title")}</span>
             {isOwner && (
               <button
                 className={styles.editBtn}
@@ -521,7 +521,7 @@ export default function ProfileSections({ isOwner }) {
           )}
         </header>
         <PortfolioSection
-          projects={projects}
+          projects={projects[lang]}
           setProjects={setProjects}
           projectsEditing={projectsEditing}
         />
@@ -531,7 +531,7 @@ export default function ProfileSections({ isOwner }) {
       <section className={styles.skillSection} id="soft skills">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>Soft Skills</span>
+            <span className={styles.title}>{t("cv_sections.softSkills")}</span>
             {isOwner && (
               <button
                 className={styles.editBtn}
@@ -572,7 +572,7 @@ export default function ProfileSections({ isOwner }) {
       <section className={styles.skillSection} id="languages">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>Languages</span>
+            <span className={styles.title}>{t("cv_sections.languages")}</span>
             {isOwner && (
               <button
                 className={styles.editBtn}
@@ -606,7 +606,7 @@ export default function ProfileSections({ isOwner }) {
       <section className={styles.section} id="contacts">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>Contacts</span>
+            <span className={styles.title}>{t("cv_sections.contacts")}</span>
             {isOwner && (
               <button
                 className={styles.editBtn}
@@ -662,7 +662,7 @@ export default function ProfileSections({ isOwner }) {
       <section className={styles.section} id="feedbacks">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>Feedbacks</span>
+            <span className={styles.title}>{t("cv_sections.feedbacks")}</span>
             <button
               className={styles.editBtn}
               onClick={() => setFeedbacksEditing(!feedbacksEditing)}

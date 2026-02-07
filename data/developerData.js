@@ -108,7 +108,7 @@ const developerData = {
         { skill: "დროის მენეჯმენტი", value: 7 },
         { skill: "ადაპტაცია", value: 8 },
         { skill: "ლოგიკური აზროვნება", value: 8 },
-      ]
+      ],
     },
   },
   languages: {
@@ -123,40 +123,76 @@ const developerData = {
       { skill: "რუსული", value: 9 },
     ],
   },
-  projects: [
-    {
-      id: uuidv4(),
-      name: "Women in AI - HTML/CSS group project",
-      img: htmlGrouProject,
-      ghLink: "https://github.com/soposilverhawk/Women-in-AI-group-project",
-      description:
-        "A simple single page group project made with HTML, CSS preprocessors SCSS/SASS and vanilla Javascript. My main responsibility here was project management via clickUp and Github as a more experienced developer in the team.",
-    },
-    {
-      id: uuidv4(),
-      name: "Women in AI - React group project",
-      img: reactGroupProject,
-      ghLink: "https://github.com/Miranda-K12/Desingo",
-      description:
-        "A group project of react SPA with fully functional navigation. My part in the group project were static components (footer, header and call to action banner with their respective functionalities).",
-    },
-    {
-      id: uuidv4(),
-      name: "Women in AI - React module solo project",
-      img: btuAISoloProject,
-      ghLink: "https://github.com/soposilverhawk/BTU-AI",
-      description:
-        "Solo React SPA with fully functional navigation, mockup chat with support, facilitating university's location, contact information, contact forms and subroutes.",
-    },
-    {
-      id: uuidv4(),
-      name: "redseam-clothing (Redberry internship project)",
-      img: redberryProject,
-      ghLink: "https://github.com/soposilverhawk/redseam-clothing",
-      description:
-        "An E-commerce website where customers can preview products without an account. Register/login and with an active account - choose different items, add them to the cart, remove, increment/decrement quantities, review the cart contents and place purchase",
-    },
-  ],
+  projects: {
+    en: [
+      {
+        id: uuidv4(),
+        name: "Women in AI - HTML/CSS group project",
+        img: htmlGrouProject,
+        ghLink: "https://github.com/soposilverhawk/Women-in-AI-group-project",
+        description:
+          "A simple single page group project made with HTML, CSS preprocessors SCSS/SASS and vanilla Javascript. My main responsibility here was project management via clickUp and Github as a more experienced developer in the team.",
+      },
+      {
+        id: uuidv4(),
+        name: "Women in AI - React group project",
+        img: reactGroupProject,
+        ghLink: "https://github.com/Miranda-K12/Desingo",
+        description:
+          "A group project of react SPA with fully functional navigation. My part in the group project were static components (footer, header and call to action banner with their respective functionalities).",
+      },
+      {
+        id: uuidv4(),
+        name: "Women in AI - React module solo project",
+        img: btuAISoloProject,
+        ghLink: "https://github.com/soposilverhawk/BTU-AI",
+        description:
+          "Solo React SPA with fully functional navigation, mockup chat with support, facilitating university's location, contact information, contact forms and subroutes.",
+      },
+      {
+        id: uuidv4(),
+        name: "redseam-clothing (Redberry internship project)",
+        img: redberryProject,
+        ghLink: "https://github.com/soposilverhawk/redseam-clothing",
+        description:
+          "An E-commerce website where customers can preview products without an account. Register/login and with an active account - choose different items, add them to the cart, remove, increment/decrement quantities, review the cart contents and place purchase",
+      },
+    ],
+    ka: [
+      {
+        id: uuidv4(),
+        name: "Women in AI - HTML/CSS ჯგუფური პროექტი",
+        img: htmlGrouProject,
+        ghLink: "https://github.com/soposilverhawk/Women-in-AI-group-project",
+        description:
+          "მარტივი, ერთგვერდიანი ჯგუფური პროექტი HTML, CSS, CSS-ის პრეპროცესორის SCSS/SASS-ისა და javascript-ის გამოყენებით. ჩემი მისია ამ პროექტში, როგორც ჯგუფში უფრო მეტად გამოცდილი დეველოპერის, მის წაყვანასა და მენეჯმენტში მდგომარეობდა. ამის შედეგად ვისწავლე ქლიქაფთან და გიტჰაბთან მუშაობა.",
+      },
+      {
+        id: uuidv4(),
+        name: "Women in AI - რეაქტის ჯგუფური პროექტი",
+        img: reactGroupProject,
+        ghLink: "https://github.com/Miranda-K12/Desingo",
+        description:
+          "მოცემულ პროექტში მომიხდა გამოცდილ ჯგუფთან მუშაობა, სადაც გადაწყვეტილებებს ერთად ვიღებით. ჩემი ნაწილი მოიცავდა სტატიკურ კომპონენტებს (ფუტერი, ჰედერი, ქოლ თუ ექშენ ბანერი თავიანთი შესაბამისი ფუნქციური ნაწილებით)",
+      },
+      {
+        id: uuidv4(),
+        name: "Women in AI - რეაქტის სოლო პროექტი",
+        img: btuAISoloProject,
+        ghLink: "https://github.com/soposilverhawk/BTU-AI",
+        description:
+          "სოლო პროექტი, რომელიც მოიცავს გამართულ შიდა ნავიგაციას, საფორთის ჩათის მოდელს, უნივერსიტეტთან დასაკონტაქტებელ ფორმებს, ჩაშენებულ ლოკაციას და სხვა.",
+      },
+      {
+        id: uuidv4(),
+        name: "redseam-clothing (რედბერის ინთერნშიფის სატესტო დავალება)",
+        img: redberryProject,
+        ghLink: "https://github.com/soposilverhawk/redseam-clothing",
+        description:
+          "ონლაინ მაღაზიის საიტი სადაც მომხარებლებს შეუძლიათ ტანსაცმლის სხვადასხვა პროდუქტების დათვალიერება. აგრეთვე ანგარიშის შექმნა/რეგისტრაცია, ანგარიშის გარეშე პროდუქტების დათვალიერება, ანგარიშით კი მათი არჩევა, დამატება კალათაში, ამოკლება და რაოდენობის გაზრდა-შემცირება. აგრეთვე შეუძლიათ კალათაში დამატებული ნივთების ნახვა და შეკვეთის დასრულება",
+      },
+    ],
+  },
   contacts: [
     {
       id: uuidv4(),

@@ -1,0 +1,16 @@
+{
+    
+  "cv_sections": {
+    "about": "ჩემს შესახებ",
+    "education": "განათლება",
+    "experience": "გამოცდილება",
+    "techSkills": "ტექნიკური უნარები",
+    "portfolio": {
+      "title": "პორტფოლიო",
+      "description": "ყველა / კოდი / UI"
+    },
+    "languages": "ენები",
+    "contacts": "საკონტაქტო ინფორმაცია",
+    "feedbacks": "შეფასებები"
+  }
+}
