@@ -1,5 +1,4 @@
 {
-    
   "cv_sections": {
     "about": "ჩემს შესახებ",
     "education": "განათლება",
@@ -7,7 +6,10 @@
     "techSkills": "ტექნიკური უნარები",
     "portfolio": {
       "title": "პორტფოლიო",
-      "description": "ყველა / კოდი / UI"
+      "description": {
+        "all": "ყველა",
+        "code": "კოდი"
+      }
     },
     "languages": "ენები",
     "contacts": "საკონტაქტო ინფორმაცია",

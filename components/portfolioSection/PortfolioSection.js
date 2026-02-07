@@ -5,8 +5,10 @@ import Image from "next/image";
 import { Box } from "@mui/material";
 import Button from "../Button/Button";
 import { v4 as uuidv4 } from "uuid";
+import { useTranslation } from "react-i18next";
 
 function PortfolioSection({ projects, setProjects, projectsEditing }) {
+  const { t } = useTranslation();
   const [projectEntry, setProjectEntry] = useState({
     name: "",
     img: "",
@@ -116,20 +118,28 @@ function PortfolioSection({ projects, setProjects, projectsEditing }) {
         }
       >
         <h3>
-          <span className={styles.highlightTxt}>All</span>
-          <span> / Code / </span>
+          <span className={styles.highlightTxt}>
+            {t("cv_sections.portfolio.description.all")}
+          </span>
+          <span> / {t("cv_sections.portfolio.description.code")} / </span>
           <span className={styles.highlightTxt}>UI</span>
         </h3>
-        <Box sx={{justifyContent: {
-          xl: "space-between",
-          lg: "center",
-          md: "center",
-          sm: "space-between",
-          xs: "space-between"
-        }, mt: {
-          lg: "5rem",
-          md: "5rem"
-        }}} className={styles.cardsWrapper} >
+        <Box
+          sx={{
+            justifyContent: {
+              xl: "space-between",
+              lg: "center",
+              md: "center",
+              sm: "space-between",
+              xs: "space-between",
+            },
+            mt: {
+              lg: "5rem",
+              md: "5rem",
+            },
+          }}
+          className={styles.cardsWrapper}
+        >
           {projects.map(({ name, img, id, ghLink, description }) => (
             <a href={ghLink} key={id} target="_blank">
               <div className={styles.cardInner}>
