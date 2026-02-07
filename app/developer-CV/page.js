@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import ProfileSections from "@/components/ProfileSections/ProfileSections";
 import LanguageSelector from "@/components/languageSelector/LanguageSelector";
 import { useTranslation } from "react-i18next";
+import { Box } from "@mui/material";
 
 function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
@@ -80,7 +81,9 @@ function Page() {
         </GoBackButton>
       </aside>
       <main className={styles.CVSectionsContainer}>
-        <LanguageSelector />
+        <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+          <LanguageSelector />
+        </Box>
         <ProfileSections isOwner={isOwner} />
       </main>
     </div>

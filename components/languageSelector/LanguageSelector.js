@@ -12,13 +12,24 @@ import { useTranslation } from "react-i18next";
 export default function LanguageSelector() {
   const { i18n } = useTranslation();
   const handleChange = (event) => {
-    const newLang = event.target.value
-    i18n.changeLanguage(newLang)
+    const newLang = event.target.value;
+    i18n.changeLanguage(newLang);
   };
 
   return (
     <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
+      <FormControl
+        fullWidth
+        sx={{
+          "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
+            {
+              borderColor: "#26c17e", // your color
+            },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#26c17e",
+          },
+        }}
+      >
         <InputLabel id="language-select-label">Language</InputLabel>
         <Select
           labelId="language-select-label"
