@@ -17,7 +17,9 @@ export default function ProfileSections({ isOwner }) {
   const lang = i18n.resolvedLanguage;
   // About me text state
   const [aboutText, setAboutText] = useState(() => {
-    return localStorage.getItem("aboutText") || developerData.aboutText;
+    return (
+      JSON.parse(localStorage.getItem("aboutText")) || developerData.aboutText
+    );
   });
   const [aboutEditing, setAboutEditing] = useState(false);
   useEffect(() => {
@@ -496,9 +498,7 @@ export default function ProfileSections({ isOwner }) {
       <section className={styles.portfolioSection} id="portfolio">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>
-              {t("cv_sections.portfolio.title")}
-            </span>
+            <span className={styles.title}>{t("cv_sections.portfolio.title")}</span>
             {isOwner && (
               <button
                 className={styles.editBtn}
