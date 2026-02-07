@@ -1,4 +1,11 @@
 {
+  "common": {
+    "developer_name": "Sopo Bichinashvili",
+    "buttons": {
+      "know_more": "Know more",
+      "go_back": "Go back"
+    }
+  },
   "cv_sections": {
     "about": "About me",
     "education": "Education",

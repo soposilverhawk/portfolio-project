@@ -9,6 +9,7 @@ import GoBackButton from "../../components/Button/Button";
 import { useRouter } from "next/navigation";
 import ProfileSections from "@/components/ProfileSections/ProfileSections";
 import LanguageSelector from "@/components/languageSelector/LanguageSelector";
+import { useTranslation } from "react-i18next";
 
 function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
@@ -16,10 +17,11 @@ function Page() {
   const [checkedPassword, setCheckedPassword] = useState(false);
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -31,7 +33,7 @@ function Page() {
       setIsOwner(true);
     }
     setCheckedPassword(true);
-  }, [])
+  }, []);
 
   if (!mounted || !checkedPassword) return null;
 
@@ -49,7 +51,7 @@ function Page() {
             }
           >
             <Image src={devImg} alt="placeholder alt" />
-            {isMenuOpen && <h1>Sopo Bichinashvili</h1>}
+            {isMenuOpen && <h1>{t("common.developer_name")}</h1>}
           </div>
           <PortfolioList
             data={navItems}
@@ -74,12 +76,12 @@ function Page() {
                 : styles.menuCollapsedReturn
             }
           ></div>
-          {isMenuOpen && "Go back"}
+          {isMenuOpen && t("common.buttons.go_back")}
         </GoBackButton>
       </aside>
       <main className={styles.CVSectionsContainer}>
         <LanguageSelector />
-       <ProfileSections isOwner={isOwner}/>
+        <ProfileSections isOwner={isOwner} />
       </main>
     </div>
   );

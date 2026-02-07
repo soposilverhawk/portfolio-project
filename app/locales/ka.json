@@ -1,4 +1,11 @@
 {
+  "common": {
+    "developer_name": "სოფო ბიჩინაშვილი",
+    "buttons": {
+      "know_more": "მეტის გაგება",
+      "go_back": "უკან დაბრუნება"
+    }
+  },
   "cv_sections": {
     "about": "ჩემს შესახებ",
     "education": "განათლება",

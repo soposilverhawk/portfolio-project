@@ -5,6 +5,7 @@ import devImg from "../public/homepage/developer-img.jpeg";
 import Button from "@/components/Button/Button";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
   const router = useRouter();
@@ -12,6 +13,7 @@ export default function Home() {
   const [displayed, setDisplayed] = useState([]);
   const [tokenIndex, setTokenIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
+  const { t } = useTranslation();
 
   useEffect(() => {
     // Break the code into styled tokens
@@ -67,7 +69,7 @@ export default function Home() {
       <div className={styles.heroOverlay}></div>
       <div className={styles.devInfo}>
         <Image src={devImg} alt="placeholder alt" />
-        <h1>Sopo Bichinashvili</h1>
+        <h1>{t("common.developer_name")}</h1>
         <h2>Junior Dev</h2>
 
         <div className={styles.devDescription}>
@@ -77,7 +79,7 @@ export default function Home() {
           </pre>
         </div>
 
-        <Button onclick={handleNavigate}>Know more</Button>
+        <Button onclick={handleNavigate}>{t("common.buttons.know_more")}</Button>
       </div>
     </div>
   );
