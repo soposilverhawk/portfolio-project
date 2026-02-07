@@ -2,18 +2,17 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./portfolioList.module.css";
+import { useTranslation } from "react-i18next";
 
 function PortfolioList({ data, variant, isMenuOpen = null }) {
-  const formatListItem = (str) => {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  };
+  const { t } = useTranslation();
   return (
     <ul
       className={
         variant === "devInfo" ? styles.portfolioList : styles.contactList
       }
     >
-      {data.map(({ id, desc, icon, alt, link }) => (
+      {data.map(({ id, key, icon, desc, alt, link }) => (
         <li
           key={id}
           className={
@@ -22,23 +21,27 @@ function PortfolioList({ data, variant, isMenuOpen = null }) {
                 ? styles.menuExpandedInfoItem
                 : styles.menuCollapsedInfoItem
               : variant === "contactList"
-              ? styles.contactItem
-              : ""
+                ? styles.contactItem
+                : ""
           }
         >
           {variant === "devInfo" ? (
             <Image
-            src={icon}
-            alt={alt}
-            width={16}
-            style={{ filter: "grayscale(1) brightness(0) invert(1)" }}
-          />
+              src={icon}
+              alt={alt}
+              width={16}
+              style={{ filter: "grayscale(1) brightness(0) invert(1)" }}
+            />
           ) : (
             <Image src={icon} alt={alt} />
           )}
           {variant === "devInfo" && isMenuOpen && (
-            <a href={`#${desc}`} className={styles.devInfoListLink}>
-              {formatListItem(desc)}
+            <a href={`#${key}`} className={styles.devInfoListLink}>
+              {t(
+                key === "portfolio"
+                  ? `cv_sections.${key}.title`
+                  : `cv_sections.${key}`,
+              )}
             </a>
           )}
           {variant === "contactList" && (
