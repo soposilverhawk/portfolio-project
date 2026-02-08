@@ -33,6 +33,7 @@ In order to access the Owner editor rights, to edit sections apart from feedback
 - 📂 Projects Showcase – Highlighted projects with descriptions and respective repository links.
 - 🔐 Owner access authorization - Possibility to edit data in place in each section with owner access.
 - ✏️ Editable Content – Unauthorized users are permitted to edit Feedbacks section without owner access.
+- 🌐 Internationalization - Access translation(s) of website accross different languages using i18n framework
 - 🧩 Reusable Components – Clean and modular component structure for scalability.
 - 🎨 Modern UI – Clean, minimal design with consistent styling.
 - 📱 Responsive Design – Fully optimized for mobile, tablet, and desktop screens.
