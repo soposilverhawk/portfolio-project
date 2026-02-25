@@ -253,7 +253,7 @@ export default function ProfileSections({ isOwner }) {
   return (
     <Box>
       {/* About Me Section */}
-      <section className={styles.section} id="about me">
+      <section className={styles.section} id="about">
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>{t("cv_sections.about")}</span>
@@ -463,7 +463,7 @@ export default function ProfileSections({ isOwner }) {
       </section>
 
       {/* Skills section */}
-      <section className={styles.skillSection} id="tech skills">
+      <section className={styles.skillSection} id="techSkills">
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>{t("cv_sections.techSkills")}</span>
@@ -528,7 +528,7 @@ export default function ProfileSections({ isOwner }) {
       </section>
 
       {/* Soft Skills section */}
-      <section className={styles.skillSection} id="soft skills">
+      <section className={styles.skillSection} id="softSkills">
         <header className={styles.header}>
           <h2>
             <span className={styles.title}>{t("cv_sections.softSkills")}</span>
