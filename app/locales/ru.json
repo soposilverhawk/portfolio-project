@@ -1,0 +1,26 @@
+{
+  "common": {
+    "developer_name": "Сопо Бичинашвили",
+    "buttons": {
+      "know_more": "Узнать больше",
+      "go_back": "Назад"
+    }
+  },
+  "cv_sections": {
+    "about": "Обо мне",
+    "education": "Образование",
+    "experience": "Опыт работы",
+    "techSkills": "Технические навыки",
+    "softSkills": "Личные качества",
+    "portfolio": {
+      "title": "Портфолио",
+      "description": {
+        "all": "Все",
+        "code": "Код"
+      }
+    },
+    "languages": "Языки",
+    "contacts": "Контакты",
+    "feedbacks": "Отзывы"
+  }
+}

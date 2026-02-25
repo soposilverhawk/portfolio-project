@@ -6,6 +6,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import KA from "../../public/portfolioPage/languageIcons/georgia-flag.png";
 import EN from "../../public/portfolioPage/languageIcons/great-britan-flag.png";
+import RU from "../../public/portfolioPage/languageIcons/russia-flag.png";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
@@ -14,6 +15,7 @@ export default function LanguageSelector() {
   const handleChange = (event) => {
     const newLang = event.target.value;
     i18n.changeLanguage(newLang);
+    console.log(newLang)
   };
 
   return (
@@ -45,6 +47,10 @@ export default function LanguageSelector() {
           <MenuItem value="ka">
             <Image src={KA} alt="Georgian" style={{ marginRight: "0.5rem" }} />
             Georgian
+          </MenuItem>
+          <MenuItem value="ru">
+            <Image src={RU} alt="Russian" style={{ marginRight: "0.5rem", width: 16, height: 16 }} />
+            Russian
           </MenuItem>
         </Select>
       </FormControl>

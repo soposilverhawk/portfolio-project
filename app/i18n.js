@@ -5,6 +5,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 
 import en from "./locales/en.json";
 import ka from "./locales/ka.json";
+import ru from "./locales/ru.json";
 
 i18next
   .use(LanguageDetector)
@@ -13,6 +14,7 @@ i18next
     resources: {
       en: { translation: en },
       ka: { translation: ka },
+      ru: { translation: ru },
     },
     lng: "en",
     fallbackLng: "en",
