@@ -3,7 +3,8 @@
     "developer_name": "სოფო ბიჩინაშვილი",
     "buttons": {
       "know_more": "მეტის გაგება",
-      "go_back": "უკან დაბრუნება"
+      "go_back": "უკან დაბრუნება",
+      "add": "დაამატე"
     }
   },
   "cv_sections": {

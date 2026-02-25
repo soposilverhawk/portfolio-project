@@ -3,7 +3,8 @@
     "developer_name": "Сопо Бичинашвили",
     "buttons": {
       "know_more": "Узнать больше",
-      "go_back": "Назад"
+      "go_back": "Назад",
+      "add": "Добавить"
     }
   },
   "cv_sections": {

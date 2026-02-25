@@ -16,6 +16,11 @@ export default function ProfileSections({ isOwner }) {
   const { i18n, t } = useTranslation();
   const lang = i18n.resolvedLanguage;
   // About me text state
+
+  function formatEditSectionAddButton(addBtnTextKey) {
+    return "+ " + t("common.buttons.add") + " " + t(`${addBtnTextKey}`);
+  }
+
   const [aboutText, setAboutText] = useState(() => {
     return (
       JSON.parse(localStorage.getItem("aboutText")) || developerData.aboutText
@@ -360,7 +365,7 @@ export default function ProfileSections({ isOwner }) {
           ))}
           {educationEditing && (
             <button className={styles.addBtn} onClick={addEducation}>
-              + Add Education
+              {formatEditSectionAddButton("cv_sections.education")}
             </button>
           )}
         </div>
@@ -457,7 +462,7 @@ export default function ProfileSections({ isOwner }) {
         ))}
         {experienceEditing && (
           <button className={styles.addBtn} onClick={addExperience}>
-            + Add Experience
+            {formatEditSectionAddButton("cv_sections.experience")}
           </button>
         )}
       </section>
@@ -498,7 +503,9 @@ export default function ProfileSections({ isOwner }) {
       <section className={styles.portfolioSection} id="portfolio">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>{t("cv_sections.portfolio.title")}</span>
+            <span className={styles.title}>
+              {t("cv_sections.portfolio.title")}
+            </span>
             {isOwner && (
               <button
                 className={styles.editBtn}
@@ -650,7 +657,7 @@ export default function ProfileSections({ isOwner }) {
               </div>
             ))}
             <button className={styles.addBtn} onClick={addContact}>
-              + Add Contact
+              {formatEditSectionAddButton("cv_sections.contacts")}
             </button>
           </div>
         ) : (
@@ -747,7 +754,7 @@ export default function ProfileSections({ isOwner }) {
               ),
             )}
             <button className={styles.addBtn} onClick={addFeedback}>
-              + Add Feedback
+              {formatEditSectionAddButton("cv_sections.feedbacks")}
             </button>
           </div>
         ) : (
