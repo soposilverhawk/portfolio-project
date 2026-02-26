@@ -116,7 +116,7 @@ const developerData = {
         description:
           "Специалист службы поддержки клиентов для e-commerce-платформы в сфере видеоигр. Обязанности включали: активное общение с клиентами и поставщиками услуг через письменные каналы связи (Discord, электронная почта), сопровождение и контроль выполнения услуг, работу с проблемными заказами и клиентами, а также ведение и управление базами данных клиентов.",
       },
-    ]
+    ],
   },
   skillSet: {
     technical: [
@@ -150,7 +150,7 @@ const developerData = {
         { skill: "Менеджмент времени", value: 7 },
         { skill: "Адаптация", value: 8 },
         { skill: "Способность решать проблемы", value: 8 },
-      ]
+      ],
     },
   },
   languages: {
@@ -168,7 +168,7 @@ const developerData = {
       { skill: "Грузинский", value: 10 },
       { skill: "Англиский", value: 9 },
       { skill: "Русский", value: 9 },
-    ]
+    ],
   },
   projects: {
     en: [
@@ -179,6 +179,12 @@ const developerData = {
         ghLink: "https://github.com/soposilverhawk/Women-in-AI-group-project",
         description:
           "A simple single page group project made with HTML, CSS preprocessors SCSS/SASS and vanilla Javascript. My main responsibility here was project management via clickUp and Github as a more experienced developer in the team.",
+        techStack: [
+          { id: uuidv4(), tech: "HTML", color: "#E34F26" },
+          { id: uuidv4(), tech: "CSS", color: "#1572B6" },
+          { id: uuidv4(), tech: "SCSS/SASS", color: "#CC6699" },
+          { id: uuidv4(), tech: "Javascript", color: "#F7DF1E" },
+        ],
       },
       {
         id: uuidv4(),
@@ -187,6 +193,14 @@ const developerData = {
         ghLink: "https://github.com/Miranda-K12/Desingo",
         description:
           "A group project of react SPA with fully functional navigation. My part in the group project were static components (footer, header and call to action banner with their respective functionalities).",
+        techStack: [
+          { id: uuidv4(), tech: "HTML", color: "#E34F26" },
+          { id: uuidv4(), tech: "Modular CSS", color: "#1572B6" },
+          { id: uuidv4(), tech: "Material UI", color: "#007FFF" },
+          { id: uuidv4(), tech: "React", color: "#61DAFB" },
+          { id: uuidv4(), tech: "React Router", color: "#CA4245" },
+          { id: uuidv4(), tech: "Vite - Build tool", color: "#646CFF" },
+        ],
       },
       {
         id: uuidv4(),
@@ -195,6 +209,15 @@ const developerData = {
         ghLink: "https://github.com/soposilverhawk/BTU-AI",
         description:
           "Solo React SPA with fully functional navigation, mockup chat with support, facilitating university's location, contact information, contact forms and subroutes.",
+        techStack: [
+          { id: uuidv4(), tech: "HTML", color: "#E34F26" },
+          { id: uuidv4(), tech: "React", color: "#61DAFB" },
+          { id: uuidv4(), tech: "Vite - Build tool", color: "#646CFF" },
+          { id: uuidv4(), tech: "Material UI", color: "#007FFF" },
+          { id: uuidv4(), tech: "React Router", color: "#CA4245" },
+          { id: uuidv4(), tech: "Context API", color: "#61DAFB" },
+          { id: uuidv4(), tech: "Custom Hooks", color: "#21A0F0" },
+        ],
       },
       {
         id: uuidv4(),
@@ -203,6 +226,20 @@ const developerData = {
         ghLink: "https://github.com/soposilverhawk/redseam-clothing",
         description:
           "An E-commerce website where customers can preview products without an account. Register/login and with an active account - choose different items, add them to the cart, remove, increment/decrement quantities, review the cart contents and place purchase",
+        techStack: [
+          { id: uuidv4(), tech: "HTML", color: "#E34F26" },
+          { id: uuidv4(), tech: "Modular CSS", color: "#1572B6" },
+          { id: uuidv4(), tech: "React", color: "#61DAFB" },
+          { id: uuidv4(), tech: "React Router", color: "#CA4245" },
+          { id: uuidv4(), tech: "Vite - Build tool", color: "#646CFF" },
+          { id: uuidv4(), tech: "Context API", color: "#61DAFB" },
+          { id: uuidv4(), tech: "Custom Hooks", color: "#21A0F0" },
+          {
+            id: uuidv4(),
+            tech: "Integration with Backend APIs",
+            color: "#FF7043",
+          },
+        ],
       },
     ],
     ka: [
@@ -213,6 +250,12 @@ const developerData = {
         ghLink: "https://github.com/soposilverhawk/Women-in-AI-group-project",
         description:
           "მარტივი, ერთგვერდიანი ჯგუფური პროექტი HTML, CSS, CSS-ის პრეპროცესორის SCSS/SASS-ისა და javascript-ის გამოყენებით. ჩემი მისია ამ პროექტში, როგორც ჯგუფში უფრო მეტად გამოცდილი დეველოპერის, მის წაყვანასა და მენეჯმენტში მდგომარეობდა. ამის შედეგად ვისწავლე ქლიქაფთან და გიტჰაბთან მუშაობა.",
+        techStack: [
+          { id: uuidv4(), tech: "HTML", color: "#E34F26" },
+          { id: uuidv4(), tech: "CSS", color: "#1572B6" },
+          { id: uuidv4(), tech: "SCSS/SASS", color: "#CC6699" },
+          { id: uuidv4(), tech: "Javascript", color: "#F7DF1E" },
+        ],
       },
       {
         id: uuidv4(),
@@ -221,6 +264,14 @@ const developerData = {
         ghLink: "https://github.com/Miranda-K12/Desingo",
         description:
           "მოცემულ პროექტში მომიხდა გამოცდილ ჯგუფთან მუშაობა, სადაც გადაწყვეტილებებს ერთად ვიღებით. ჩემი ნაწილი მოიცავდა სტატიკურ კომპონენტებს (ფუტერი, ჰედერი, ქოლ თუ ექშენ ბანერი თავიანთი შესაბამისი ფუნქციური ნაწილებით)",
+        techStack: [
+          { id: uuidv4(), tech: "HTML", color: "#E34F26" },
+          { id: uuidv4(), tech: "Modular CSS", color: "#1572B6" },
+          { id: uuidv4(), tech: "Material UI", color: "#007FFF" },
+          { id: uuidv4(), tech: "React", color: "#61DAFB" },
+          { id: uuidv4(), tech: "React Router", color: "#CA4245" },
+          { id: uuidv4(), tech: "Vite - Build tool", color: "#646CFF" },
+        ],
       },
       {
         id: uuidv4(),
@@ -229,6 +280,15 @@ const developerData = {
         ghLink: "https://github.com/soposilverhawk/BTU-AI",
         description:
           "სოლო პროექტი, რომელიც მოიცავს გამართულ შიდა ნავიგაციას, საფორთის ჩათის მოდელს, უნივერსიტეტთან დასაკონტაქტებელ ფორმებს, ჩაშენებულ ლოკაციას და სხვა.",
+        techStack: [
+          { id: uuidv4(), tech: "HTML", color: "#E34F26" },
+          { id: uuidv4(), tech: "React", color: "#61DAFB" },
+          { id: uuidv4(), tech: "Vite - Build tool", color: "#646CFF" },
+          { id: uuidv4(), tech: "Material UI", color: "#007FFF" },
+          { id: uuidv4(), tech: "React Router", color: "#CA4245" },
+          { id: uuidv4(), tech: "Context API", color: "#61DAFB" },
+          { id: uuidv4(), tech: "Custom Hooks", color: "#21A0F0" },
+        ],
       },
       {
         id: uuidv4(),
@@ -237,6 +297,20 @@ const developerData = {
         ghLink: "https://github.com/soposilverhawk/redseam-clothing",
         description:
           "ონლაინ მაღაზიის საიტი სადაც მომხარებლებს შეუძლიათ ტანსაცმლის სხვადასხვა პროდუქტების დათვალიერება. აგრეთვე ანგარიშის შექმნა/რეგისტრაცია, ანგარიშის გარეშე პროდუქტების დათვალიერება, ანგარიშით კი მათი არჩევა, დამატება კალათაში, ამოკლება და რაოდენობის გაზრდა-შემცირება. აგრეთვე შეუძლიათ კალათაში დამატებული ნივთების ნახვა და შეკვეთის დასრულება",
+        techStack: [
+          { id: uuidv4(), tech: "HTML", color: "#E34F26" },
+          { id: uuidv4(), tech: "Modular CSS", color: "#1572B6" },
+          { id: uuidv4(), tech: "React", color: "#61DAFB" },
+          { id: uuidv4(), tech: "React Router", color: "#CA4245" },
+          { id: uuidv4(), tech: "Vite - Build tool", color: "#646CFF" },
+          { id: uuidv4(), tech: "Context API", color: "#61DAFB" },
+          { id: uuidv4(), tech: "Custom Hooks", color: "#21A0F0" },
+          {
+            id: uuidv4(),
+            tech: "Integration with Backend APIs",
+            color: "#FF7043",
+          },
+        ],
       },
     ],
     ru: [
@@ -247,6 +321,12 @@ const developerData = {
         ghLink: "https://github.com/soposilverhawk/Women-in-AI-group-project",
         description:
           "Простой одностраничный групповой проект, выполненный с использованием HTML, CSS-препроцессоров SCSS/SASS и чистого JavaScript. Моей основной обязанностью было управление проектом через ClickUp и GitHub, так как я был(а) более опытным разработчиком в команде.",
+        techStack: [
+          { id: uuidv4(), tech: "HTML", color: "#E34F26" },
+          { id: uuidv4(), tech: "CSS", color: "#1572B6" },
+          { id: uuidv4(), tech: "SCSS/SASS", color: "#CC6699" },
+          { id: uuidv4(), tech: "Javascript", color: "#F7DF1E" },
+        ],
       },
       {
         id: uuidv4(),
@@ -255,6 +335,14 @@ const developerData = {
         ghLink: "https://github.com/Miranda-K12/Desingo",
         description:
           "Групповой проект — SPA на React с полностью реализованной навигацией. Моей частью в проекте была разработка статических компонентов (footer, header и баннер с призывом к действию) и реализация соответствующей функциональности.",
+        techStack: [
+          { id: uuidv4(), tech: "HTML", color: "#E34F26" },
+          { id: uuidv4(), tech: "Modular CSS", color: "#1572B6" },
+          { id: uuidv4(), tech: "Material UI", color: "#007FFF" },
+          { id: uuidv4(), tech: "React", color: "#61DAFB" },
+          { id: uuidv4(), tech: "React Router", color: "#CA4245" },
+          { id: uuidv4(), tech: "Vite - Build tool", color: "#646CFF" },
+        ],
       },
       {
         id: uuidv4(),
@@ -263,6 +351,15 @@ const developerData = {
         ghLink: "https://github.com/soposilverhawk/BTU-AI",
         description:
           "Индивидуальный проект — SPA на React с полностью реализованной навигацией, демонстрационным (mock-up) чатом со службой поддержки, отображением местоположения университета, контактной информацией, формами обратной связи и системой вложенных маршрутов (subroutes).",
+        techStack: [
+          { id: uuidv4(), tech: "HTML", color: "#E34F26" },
+          { id: uuidv4(), tech: "React", color: "#61DAFB" },
+          { id: uuidv4(), tech: "Vite - Build tool", color: "#646CFF" },
+          { id: uuidv4(), tech: "Material UI", color: "#007FFF" },
+          { id: uuidv4(), tech: "React Router", color: "#CA4245" },
+          { id: uuidv4(), tech: "Context API", color: "#61DAFB" },
+          { id: uuidv4(), tech: "Custom Hooks", color: "#21A0F0" },
+        ],
       },
       {
         id: uuidv4(),
@@ -271,8 +368,22 @@ const developerData = {
         ghLink: "https://github.com/soposilverhawk/redseam-clothing",
         description:
           "Интернет-магазин, в котором пользователи могут просматривать товары без регистрации. После регистрации и входа в систему пользователи с активным аккаунтом могут выбирать товары, добавлять их в корзину, удалять позиции, увеличивать и уменьшать количество, просматривать содержимое корзины и оформлять покупку.",
+        techStack: [
+          { id: uuidv4(), tech: "HTML", color: "#E34F26" },
+          { id: uuidv4(), tech: "Modular CSS", color: "#1572B6" },
+          { id: uuidv4(), tech: "React", color: "#61DAFB" },
+          { id: uuidv4(), tech: "React Router", color: "#CA4245" },
+          { id: uuidv4(), tech: "Vite - Build tool", color: "#646CFF" },
+          { id: uuidv4(), tech: "Context API", color: "#61DAFB" },
+          { id: uuidv4(), tech: "Custom Hooks", color: "#21A0F0" },
+          {
+            id: uuidv4(),
+            tech: "Integration with Backend APIs",
+            color: "#FF7043",
+          },
+        ],
       },
-    ]
+    ],
   },
   contacts: [
     {
@@ -316,5 +427,7 @@ const developerData = {
     },
   ],
 };
+
+// note: fix the structure of the data folder for different languages for the future
 
 export default developerData;

@@ -42,6 +42,7 @@
         "all": "ყველა",
         "code": "კოდი"
       },
+      "project_technologies": "გამოყენებული ტექნოლოგიები",
       "editing": {
         "project_name_input": {
           "label": "პროექტის სახელი",

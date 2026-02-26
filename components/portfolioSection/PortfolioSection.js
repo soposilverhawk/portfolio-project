@@ -140,7 +140,7 @@ function PortfolioSection({ projects, setProjects, projectsEditing }) {
           }}
           className={styles.cardsWrapper}
         >
-          {projects.map(({ name, img, id, ghLink, description }) => (
+          {projects.map(({ name, img, id, ghLink, description, techStack }) => (
             <a href={ghLink} key={id} target="_blank">
               <div className={styles.cardInner}>
                 <div className={styles.cardFront}>
@@ -158,6 +158,14 @@ function PortfolioSection({ projects, setProjects, projectsEditing }) {
                 <div className={styles.cardBack}>
                   <h4>{name}</h4>
                   <span>{description}</span>
+                  <div className={styles.usedTechContainer}>
+                    <h5>{t("cv_sections.portfolio.project_technologies")}:</h5>
+                    <ul>
+                      {techStack?.map(({id, tech, color}) => (
+                        <li key={id} style={{border: `1px solid ${color}`, padding: "1rem"}}>{tech}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </a>

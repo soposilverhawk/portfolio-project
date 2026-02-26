@@ -42,6 +42,7 @@
         "all": "All",
         "code": "Code"
       },
+      "project_technologies": "Technologies used",
       "editing": {
         "project_name_input": {
           "label": "Project Name",

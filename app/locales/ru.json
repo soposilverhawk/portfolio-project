@@ -42,6 +42,7 @@
         "all": "Все",
         "code": "Код"
       },
+      "project_technologies": "Использованные технологии",
       "editing": {
         "project_name_input": {
           "label": "Название проекта",
