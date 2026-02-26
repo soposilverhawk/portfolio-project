@@ -44,13 +44,13 @@ function PortfolioSection({ projects, setProjects, projectsEditing }) {
         <form className={styles.form} onSubmit={handleFormSubmit}>
           <Box>
             <label htmlFor="project-name" className={styles.label}>
-              Project Name:
+              {t("cv_sections.portfolio.editing.project_name_input.label")}:
             </label>
             <input
               name="project-name"
               className={styles.input}
               value={projectEntry.name}
-              placeholder="Enter project name"
+              placeholder={t("cv_sections.portfolio.editing.project_name_input.input_placeholder")}
               onChange={(e) =>
                 setProjectEntry((prev) => ({ ...prev, name: e.target.value }))
               }
@@ -58,13 +58,13 @@ function PortfolioSection({ projects, setProjects, projectsEditing }) {
           </Box>
           <Box>
             <label htmlFor="project-link" className={styles.label}>
-              Project Link:
+              {t("cv_sections.portfolio.editing.project_link_input.label")}:
             </label>
             <input
               name="project-link"
               className={styles.input}
               value={projectEntry.ghLink}
-              placeholder="Enter project link"
+              placeholder={t("cv_sections.portfolio.editing.project_link_input.input_placeholder")}
               onChange={(e) =>
                 setProjectEntry((prev) => ({ ...prev, ghLink: e.target.value }))
               }
@@ -72,11 +72,11 @@ function PortfolioSection({ projects, setProjects, projectsEditing }) {
           </Box>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <label htmlFor="project-description" className={styles.label}>
-              Describe your project:
+              {t("cv_sections.portfolio.editing.project_description_input.label")}:
             </label>
             <textarea
               name="project-description"
-              placeholder="project details..."
+              placeholder={t("cv_sections.portfolio.editing.project_description_input.input_placeholder")}
               cols={40}
               rows={5}
               value={projectEntry.description}
@@ -91,7 +91,7 @@ function PortfolioSection({ projects, setProjects, projectsEditing }) {
           </Box>
           <Box sx={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
             <label htmlFor="project-img" className={styles.label}>
-              Project image
+              {t("cv_sections.portfolio.editing.project_image_input.label")}
             </label>
             <input
               name="project-img"
@@ -107,7 +107,7 @@ function PortfolioSection({ projects, setProjects, projectsEditing }) {
               }
             />
           </Box>
-          <Button variant="regular">Add Project</Button>
+          <Button variant="regular">{t("cv_sections.portfolio.editing.add_project")}</Button>
         </form>
       </Box>
       <div

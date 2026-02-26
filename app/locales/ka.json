@@ -7,9 +7,17 @@
     },
     "editing_sections": {
       "add": "დაამატე",
-      "skill": "უნარი",
-      "project": "პროექტი",
-      "cancel": "გაუქმება"
+      "cancel": "გაუქმება",
+      "skills_editing": {
+        "skill_name_input": {
+          "label": "უნარჩვევის სახელი",
+          "input_placeholder": "შეიყვანეთ უნარჩვევის სახელი"
+        },
+        "skill_range_input": {
+          "label": "უნარჩვევის მაჩვენებელი"
+        },
+        "add_skill": "უნარჩვევის დამატება"
+      }
     }
   },
   "cv_sections": {
@@ -33,6 +41,24 @@
       "description": {
         "all": "ყველა",
         "code": "კოდი"
+      },
+      "editing": {
+        "project_name_input": {
+          "label": "პროექტის სახელი",
+          "input_placeholder": "შეიყვანეთ პროექტის სახელი"
+        },
+        "project_link_input": {
+          "label": "პროექტის ლინკი",
+          "input_placeholder": "შეიყვანეთ პროექტის ლინკი"
+        },
+        "project_description_input": {
+          "label": "აღწერეთ თქვენი პროექტი",
+          "input_placeholder": "პროექტის დეტალები..."
+        },
+        "project_image_input": {
+          "label": "პროექტის სურათი"
+        },
+        "add_project": "პროექტის დამატება"
       }
     },
     "languages": {

@@ -4,10 +4,12 @@ import { BarChart } from "@mui/x-charts/BarChart";
 import { Box } from "@mui/material";
 import Button from "../Button/Button";
 import styles from "./skillsSection.module.css";
+import { useTranslation } from "react-i18next";
 
 function SkillsSection({ variant, skillSet, setSkillSet, skillsEditing }) {
   const [skillName, setSkillName] = useState("");
   const [skillRange, setSkillRange] = useState(1);
+  const { t } = useTranslation();
 
   const skills = skillSet.map((entry) => entry.skill);
   const values = skillSet.map((entry) => entry.value);
@@ -36,19 +38,19 @@ function SkillsSection({ variant, skillSet, setSkillSet, skillsEditing }) {
       >
         <Box>
           <label htmlFor="name" className={styles.label}>
-            Skill name:
+            {t("common.editing_sections.skills_editing.skill_name_input.label")}:
           </label>
           <input
             name="name"
             value={skillName}
-            placeholder="Enter skill name"
+            placeholder={t("common.editing_sections.skills_editing.skill_name_input.input_placeholder")}
             onChange={(e) => setSkillName(e.target.value)}
             className={styles.input}
           />
         </Box>
         <Box>
           <label htmlFor="range" className={styles.label}>
-            Skill range:
+            {t("common.editing_sections.skills_editing.skill_range_input.label")}:
           </label>
           <input
             type="number"
@@ -61,7 +63,7 @@ function SkillsSection({ variant, skillSet, setSkillSet, skillsEditing }) {
           />
         </Box>
         <Button variant="regular" onclick={addSkill}>
-          Add Skill
+          {t("common.editing_sections.skills_editing.add_skill")}
         </Button>
       </Box>
       {variant === "horizontal" ? (

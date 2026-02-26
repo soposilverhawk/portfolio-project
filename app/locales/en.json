@@ -7,9 +7,17 @@
     },
     "editing_sections": {
       "add": "Add",
-      "skill": "skill",
-      "project": "project",
-      "cancel": "cancel"
+      "cancel": "cancel",
+      "skills_editing": {
+        "skill_name_input": {
+          "label": "Skill name",
+          "input_placeholder": "Enter skill name"
+        },
+        "skill_range_input": {
+          "label": "Skill range"
+        },
+        "add_skill": "Add Skill"
+      }
     }
   },
   "cv_sections": {
@@ -33,6 +41,24 @@
       "description": {
         "all": "All",
         "code": "Code"
+      },
+      "editing": {
+        "project_name_input": {
+          "label": "Project Name",
+          "input_placeholder": "Enter project name"
+        },
+        "project_link_input": {
+          "label": "Project Link",
+          "input_placeholder": "Enter project link"
+        },
+        "project_description_input": {
+          "label": "Describe your project",
+          "input_placeholder": "Project details..."
+        },
+        "project_image_input": {
+          "label": "Project image"
+        },
+        "add_project": "Add Project"
       }
     },
     "languages": {

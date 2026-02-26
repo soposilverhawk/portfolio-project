@@ -487,7 +487,7 @@ export default function ProfileSections({ isOwner }) {
           </h2>
           {skillsEditing && (
             <Button variant="regular" onclick={() => setSkillsEditing(false)}>
-              cancel
+              {t("common.editing_sections.cancel")}
             </Button>
           )}
         </header>
@@ -523,7 +523,7 @@ export default function ProfileSections({ isOwner }) {
           </h2>
           {projectsEditing && (
             <Button variant="regular" onclick={() => setProjectsEditing(false)}>
-              cancel
+              {t("common.editing_sections.cancel")}
             </Button>
           )}
         </header>
@@ -563,7 +563,7 @@ export default function ProfileSections({ isOwner }) {
               variant="regular"
               onclick={() => setSoftSkillsEditing(false)}
             >
-              cancel
+              {t("common.editing_sections.cancel")}
             </Button>
           )}
         </header>
@@ -597,7 +597,7 @@ export default function ProfileSections({ isOwner }) {
           </h2>
           {languagesEditing && (
             <Button variant="regular" onclick={() => setLanguageEditing(false)}>
-              cancel
+              {t("common.editing_sections.cancel")}
             </Button>
           )}
         </header>
