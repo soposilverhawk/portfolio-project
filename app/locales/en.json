@@ -3,16 +3,31 @@
     "developer_name": "Sopo Bichinashvili",
     "buttons": {
       "know_more": "Know more",
-      "go_back": "Go back",
-      "add": "Add"
+      "go_back": "Go back"
+    },
+    "editing_sections": {
+      "add": "Add",
+      "skill": "skill",
+      "project": "project",
+      "cancel": "cancel"
     }
   },
   "cv_sections": {
-    "about": "About me",
-    "education": "Education",
-    "experience": "Experience",
-    "techSkills": "Tech skills",
-    "softSkills": "Soft skills",
+    "about": {
+      "title": "About me"
+    },
+    "education": {
+      "title": "Education"
+    },
+    "experience": {
+      "title": "Experience"
+    },
+    "techSkills": {
+      "title": "Tech skills"
+    },
+    "softSkills": {
+      "title": "Soft skills"
+    },
     "portfolio": {
       "title": "Portfolio",
       "description": {
@@ -20,8 +35,14 @@
         "code": "Code"
       }
     },
-    "languages": "Languages",
-    "contacts": "Contacts",
-    "feedbacks": "Feedbacks"
+    "languages": {
+      "title": "Languages"
+    },
+    "contacts": {
+      "title": "Contacts"
+    },
+    "feedbacks": {
+      "title": "Feedbacks"
+    }
   }
 }

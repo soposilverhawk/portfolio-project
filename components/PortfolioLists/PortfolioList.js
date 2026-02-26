@@ -37,11 +37,7 @@ function PortfolioList({ data, variant, isMenuOpen = null }) {
           )}
           {variant === "devInfo" && isMenuOpen && (
             <a href={`#${key}`} className={styles.devInfoListLink}>
-              {t(
-                key === "portfolio"
-                  ? `cv_sections.${key}.title`
-                  : `cv_sections.${key}`,
-              )}
+              {t(`cv_sections.${key}.title`)}
             </a>
           )}
           {variant === "contactList" && (

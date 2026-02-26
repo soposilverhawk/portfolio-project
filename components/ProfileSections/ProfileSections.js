@@ -18,7 +18,7 @@ export default function ProfileSections({ isOwner }) {
   // About me text state
 
   function formatEditSectionAddButton(addBtnTextKey) {
-    return "+ " + t("common.buttons.add") + " " + t(`${addBtnTextKey}`);
+    return "+ " + t("common.editing_sections.add") + " " + t(`${addBtnTextKey}`);
   }
 
   const [aboutText, setAboutText] = useState(() => {
@@ -261,7 +261,7 @@ export default function ProfileSections({ isOwner }) {
       <section className={styles.section} id="about">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>{t("cv_sections.about")}</span>
+            <span className={styles.title}>{t("cv_sections.about.title")}</span>
             {isOwner && (
               <button
                 className={styles.editBtn}
@@ -292,7 +292,7 @@ export default function ProfileSections({ isOwner }) {
       <section className={styles.section} id="education">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>{t("cv_sections.education")}</span>
+            <span className={styles.title}>{t("cv_sections.education.title")}</span>
             {isOwner && (
               <button
                 className={styles.editBtn}
@@ -365,7 +365,7 @@ export default function ProfileSections({ isOwner }) {
           ))}
           {educationEditing && (
             <button className={styles.addBtn} onClick={addEducation}>
-              {formatEditSectionAddButton("cv_sections.education")}
+              {formatEditSectionAddButton("cv_sections.education.title")}
             </button>
           )}
         </div>
@@ -375,7 +375,7 @@ export default function ProfileSections({ isOwner }) {
       <section className={styles.section} id="experience">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>{t("cv_sections.experience")}</span>
+            <span className={styles.title}>{t("cv_sections.experience.title")}</span>
             {isOwner && (
               <button
                 className={styles.editBtn}
@@ -462,7 +462,7 @@ export default function ProfileSections({ isOwner }) {
         ))}
         {experienceEditing && (
           <button className={styles.addBtn} onClick={addExperience}>
-            {formatEditSectionAddButton("cv_sections.experience")}
+            {formatEditSectionAddButton("cv_sections.experience.title")}
           </button>
         )}
       </section>
@@ -471,7 +471,7 @@ export default function ProfileSections({ isOwner }) {
       <section className={styles.skillSection} id="techSkills">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>{t("cv_sections.techSkills")}</span>
+            <span className={styles.title}>{t("cv_sections.techSkills.title")}</span>
             {isOwner && (
               <button
                 className={styles.editBtn}
@@ -538,7 +538,7 @@ export default function ProfileSections({ isOwner }) {
       <section className={styles.skillSection} id="softSkills">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>{t("cv_sections.softSkills")}</span>
+            <span className={styles.title}>{t("cv_sections.softSkills.title")}</span>
             {isOwner && (
               <button
                 className={styles.editBtn}
@@ -579,7 +579,7 @@ export default function ProfileSections({ isOwner }) {
       <section className={styles.skillSection} id="languages">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>{t("cv_sections.languages")}</span>
+            <span className={styles.title}>{t("cv_sections.languages.title")}</span>
             {isOwner && (
               <button
                 className={styles.editBtn}
@@ -613,7 +613,7 @@ export default function ProfileSections({ isOwner }) {
       <section className={styles.section} id="contacts">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>{t("cv_sections.contacts")}</span>
+            <span className={styles.title}>{t("cv_sections.contacts.title")}</span>
             {isOwner && (
               <button
                 className={styles.editBtn}
@@ -657,7 +657,7 @@ export default function ProfileSections({ isOwner }) {
               </div>
             ))}
             <button className={styles.addBtn} onClick={addContact}>
-              {formatEditSectionAddButton("cv_sections.contacts")}
+              {formatEditSectionAddButton("cv_sections.contacts.title")}
             </button>
           </div>
         ) : (
@@ -669,7 +669,7 @@ export default function ProfileSections({ isOwner }) {
       <section className={styles.section} id="feedbacks">
         <header className={styles.header}>
           <h2>
-            <span className={styles.title}>{t("cv_sections.feedbacks")}</span>
+            <span className={styles.title}>{t("cv_sections.feedbacks.title")}</span>
             <button
               className={styles.editBtn}
               onClick={() => setFeedbacksEditing(!feedbacksEditing)}
@@ -754,7 +754,7 @@ export default function ProfileSections({ isOwner }) {
               ),
             )}
             <button className={styles.addBtn} onClick={addFeedback}>
-              {formatEditSectionAddButton("cv_sections.feedbacks")}
+              {formatEditSectionAddButton("cv_sections.feedbacks.title")}
             </button>
           </div>
         ) : (

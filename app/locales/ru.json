@@ -3,16 +3,31 @@
     "developer_name": "Сопо Бичинашвили",
     "buttons": {
       "know_more": "Узнать больше",
-      "go_back": "Назад",
-      "add": "Добавить"
+      "go_back": "Назад"
+    },
+    "editing_sections": {
+      "add": "Добавить",
+      "skill": "навык",
+      "project": "проект",
+      "cancel": "отменить"
     }
   },
   "cv_sections": {
-    "about": "Обо мне",
-    "education": "Образование",
-    "experience": "Опыт работы",
-    "techSkills": "Технические навыки",
-    "softSkills": "Личные качества",
+    "about": {
+      "title": "Обо мне"
+    },
+    "education": {
+      "title": "Образование"
+    },
+    "experience": {
+      "title": "Опыт работы"
+    },
+    "techSkills": {
+      "title": "Технические навыки"
+    },
+    "softSkills": {
+      "title": "Личные качества"
+    },
     "portfolio": {
       "title": "Портфолио",
       "description": {
@@ -20,8 +35,14 @@
         "code": "Код"
       }
     },
-    "languages": "Языки",
-    "contacts": "Контакты",
-    "feedbacks": "Отзывы"
+    "languages": {
+      "title": "Языки"
+    },
+    "contacts": {
+      "title": "Контакты"
+    },
+    "feedbacks": {
+      "title": "Отзывы"
+    }
   }
 }

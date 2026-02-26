@@ -3,16 +3,31 @@
     "developer_name": "სოფო ბიჩინაშვილი",
     "buttons": {
       "know_more": "მეტის გაგება",
-      "go_back": "უკან დაბრუნება",
-      "add": "დაამატე"
+      "go_back": "უკან დაბრუნება"
+    },
+    "editing_sections": {
+      "add": "დაამატე",
+      "skill": "უნარი",
+      "project": "პროექტი",
+      "cancel": "გაუქმება"
     }
   },
   "cv_sections": {
-    "about": "ჩემს შესახებ",
-    "education": "განათლება",
-    "experience": "გამოცდილება",
-    "techSkills": "ტექნიკური უნარები",
-    "softSkills": "პიროვნული უნარები",
+    "about": {
+      "title": "ჩემს შესახებ"
+    },
+    "education": {
+      "title": "განათლება"
+    },
+    "experience": {
+      "title": "გამოცდილება"
+    },
+    "techSkills": {
+      "title": "ტექნიკური უნარები"
+    },
+    "softSkills": {
+      "title": "პიროვნული უნარები"
+    },
     "portfolio": {
       "title": "პორტფოლიო",
       "description": {
@@ -20,8 +35,14 @@
         "code": "კოდი"
       }
     },
-    "languages": "ენები",
-    "contacts": "საკონტაქტო ინფორმაცია",
-    "feedbacks": "შეფასებები"
+    "languages": {
+      "title": "ენები"
+    },
+    "contacts": {
+      "title": "საკონტაქტო ინფორმაცია"
+    },
+    "feedbacks": {
+      "title": "შეფასებები"
+    }
   }
 }
