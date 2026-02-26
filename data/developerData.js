@@ -283,7 +283,7 @@ const developerData = {
     },
     {
       id: uuidv4(),
-      desc: "darkness24lol@gmail.com",
+      desc: "sopobichinashvili@gmail.com",
       icon: emailIcon,
       alt: "email icon",
     },
