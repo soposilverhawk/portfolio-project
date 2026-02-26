@@ -18,7 +18,7 @@ const developerData = {
     en: [
       {
         id: uuidv4(),
-        year: "2025 - current",
+        year: "2025",
         title: "Women in AI - web development course",
         description:
           "Women in AI is part of the women’s economic empowerment component of the UN Women’s project “Good governance for gender equality in Georgia”, which is implemented by BTU with the support of the Norwegian government. Project aims to empower and upskill 200 women in Georgia by providing them with comprehensive education and hands-on experience in the fields of Artificial Intelligence (AI) and Web Development.",
@@ -33,7 +33,7 @@ const developerData = {
     ],
     ka: [
       {
-        year: "2025 - დღემდე",
+        year: "2025",
         title: "Women in AI - ვებ დეველოპმენტის კურსი",
         description:
           "Women in AI არის გაეროს ქალების გადამზადების პროექტი IT მიმართუელბით. იგი ემსახურება ქალების ეკონომიკურ გაძლიერებას და საქართველოში IT სფეროში გენდერული თანასწორობის დამყარებას. მის ფარგლებში გადამზადდა 200 ქალი რომელმაც მიიღო განათლება და პრაქტიკული გამოცდილება ხელოვნური ინტელექტისა (AI) და ვებ დეველოპმენტის სფეროებში.",
@@ -48,7 +48,7 @@ const developerData = {
     ru: [
       {
         id: uuidv4(),
-        year: "2025 - Текущee",
+        year: "2025",
         title: "Women in AI - Курс веб-разработки",
         description:
           "Women in AI это часть программы ООН - “Уровновешения гендерного равноправия в Грузии”. Проект проводитса Университетам БТУ и поддерживаетса Норвежским государством. Его основной целю евляетса переквалификация 200 девушек и женьщин в Грузии давая им знания и практичный опыт в сферах искуственного интелекта (ИИ) и веб-разработки.",
