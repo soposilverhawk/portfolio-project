@@ -7,6 +7,7 @@ import htmlGrouProject from "../public/portfolioPage/cards/html-group-project.jp
 import reactGroupProject from "../public/portfolioPage/cards/react-group-project.jpeg";
 import btuAISoloProject from "../public/portfolioPage/cards/btu-ai-solo-project.jpeg";
 import redberryProject from "../public/portfolioPage/cards/redberry-project.jpg";
+import scandiwebApplicationProject from "../public/portfolioPage/cards/scandiweb-test-project.jpg";
 
 const developerData = {
   aboutText: {
@@ -125,9 +126,12 @@ const developerData = {
       { skill: "SCSS/SASS", value: 6.5 },
       { skill: "Bootstrap", value: 5 },
       { skill: "Javascript", value: 8 },
-      { skill: "React", value: 6.5 },
-      { skill: "clickUp", value: 6 },
+      { skill: "React", value: 7 },
+      { skill: "PHP", value: 6 },
+      { skill: "GraphQL", value: 5 },
+      { skill: "MySQL", value: 6 },
       { skill: "Git", value: 7 },
+      { skill: "Docker", value: 6 },
     ],
     soft: {
       en: [
@@ -221,7 +225,7 @@ const developerData = {
       },
       {
         id: uuidv4(),
-        name: "redseam-clothing (Redberry internship project)",
+        name: "Redseam-clothing (Redberry internship project)",
         img: redberryProject,
         ghLink: "https://github.com/soposilverhawk/redseam-clothing",
         description:
@@ -239,6 +243,27 @@ const developerData = {
             tech: "Integration with Backend APIs",
             color: "#FF7043",
           },
+        ],
+      },
+      {
+        id: uuidv4(),
+        name: "Scandiweb full-stack job application test task",
+        img: scandiwebApplicationProject,
+        ghLink: "https://github.com/soposilverhawk/my_site",
+        description:
+          "A full-stack e-commerce website where customers can view available products and their details. Add them to cart and place orders. The application is built with PHP + GraphQL (backend + APIs), MySQL (database), React (frontend) and is containerized using Docker",
+        techStack: [
+          { id: uuidv4(), tech: "HTML", color: "#E34F26" },
+          { id: uuidv4(), tech: "Styled components", color: "#1572B6" },
+          { id: uuidv4(), tech: "React", color: "#61DAFB" },
+          { id: uuidv4(), tech: "React Router", color: "#CA4245" },
+          { id: uuidv4(), tech: "Vite - Build tool", color: "#646CFF" },
+          { id: uuidv4(), tech: "Context API", color: "#61DAFB" },
+          { id: uuidv4(), tech: "Custom Hooks", color: "#21A0F0" },
+          { id: uuidv4(), tech: "PHP", color: "#777BB3" },
+          { id: uuidv4(), tech: "GraphQL", color: "#E10098" },
+          { id: uuidv4(), tech: "MySQL", color: "#F29111" },
+          { id: uuidv4(), tech: "Docker", color: "#1D63ED" },
         ],
       },
     ],
@@ -312,6 +337,27 @@ const developerData = {
           },
         ],
       },
+      {
+        id: uuidv4(),
+        name: "Scandiweb full-stack დეველოპერის პოზიციის სატესტო დავალება",
+        img: scandiwebApplicationProject,
+        ghLink: "https://github.com/soposilverhawk/my_site",
+        description:
+          "მოცემული პროექტი არის full-stack მაღაზია, სადაც მომხმარებლებს შეუძლიათ პროდუქტების ნახვა, მათი კალათაში დამატება და შეკვეთის გაფორმება. შექმნილია PHP + GraphQL (ბექი + API), MySQL (მონაცემთა ბაზა), React-ის დახმარებით და კონტეინერიზირებულია Docker-ით",
+        techStack: [
+          { id: uuidv4(), tech: "HTML", color: "#E34F26" },
+          { id: uuidv4(), tech: "Styled components", color: "#1572B6" },
+          { id: uuidv4(), tech: "React", color: "#61DAFB" },
+          { id: uuidv4(), tech: "React Router", color: "#CA4245" },
+          { id: uuidv4(), tech: "Vite - Build tool", color: "#646CFF" },
+          { id: uuidv4(), tech: "Context API", color: "#61DAFB" },
+          { id: uuidv4(), tech: "Custom Hooks", color: "#21A0F0" },
+          { id: uuidv4(), tech: "PHP", color: "#777BB3" },
+          { id: uuidv4(), tech: "GraphQL", color: "#E10098" },
+          { id: uuidv4(), tech: "MySQL", color: "#F29111" },
+          { id: uuidv4(), tech: "Docker", color: "#1D63ED" },
+        ],
+      },
     ],
     ru: [
       {
@@ -381,6 +427,27 @@ const developerData = {
             tech: "Integration with Backend APIs",
             color: "#FF7043",
           },
+        ],
+      },
+      {
+        id: uuidv4(),
+        name: "Scandiweb full-stack тестовая задача по рабочей апликации",
+        img: scandiwebApplicationProject,
+        ghLink: "https://github.com/soposilverhawk/my_site",
+        description:
+          "Проект составляет из себя фулстек онлаин магазин. покупатели могут посмотреть продукты, добавить их в корзину и оформлить заказ. Бекенд собран с помощю  PHP + GraphQL, базза данных - MySQL, фронт на React и контеинизирован через Docker",
+        techStack: [
+          { id: uuidv4(), tech: "HTML", color: "#E34F26" },
+          { id: uuidv4(), tech: "Styled components", color: "#1572B6" },
+          { id: uuidv4(), tech: "React", color: "#61DAFB" },
+          { id: uuidv4(), tech: "React Router", color: "#CA4245" },
+          { id: uuidv4(), tech: "Vite - Build tool", color: "#646CFF" },
+          { id: uuidv4(), tech: "Context API", color: "#61DAFB" },
+          { id: uuidv4(), tech: "Custom Hooks", color: "#21A0F0" },
+          { id: uuidv4(), tech: "PHP", color: "#777BB3" },
+          { id: uuidv4(), tech: "GraphQL", color: "#E10098" },
+          { id: uuidv4(), tech: "MySQL", color: "#F29111" },
+          { id: uuidv4(), tech: "Docker", color: "#1D63ED" },
         ],
       },
     ],
